@@ -5,7 +5,7 @@
 'use strict';
 
 // ===== KONFIGURACJA — ZMIEŃ TUTAJ =====
-var PHONE = '+48000000000';           // <-- wstaw swój numer telefonu
+var PHONE = '+48730421557';           // <-- wstaw swój numer telefonu
 var GALLERY_PASSWORD = 'ADMIC2025';  // <-- hasło do dodawania zdjęć
 
 // ===== SUPABASE (galeria widoczna dla WSZYSTKICH odwiedzających) =====
