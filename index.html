@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADMIC GARAGE – Detaling & Kodowanie BMW | Kraków, Kalwaria Zebrzydowska</title>
+<meta name="description" content="ADMIC GARAGE – profesjonalny detaling samochodowy i kodowanie BMW w Krakowie i okolicach. CarPlay, aktywacja funkcji, pranie tapicerki, mycie auta. Dojazd do klienta!">
+<meta name="keywords" content="detaling Kraków, kodowanie BMW Kraków, CarPlay BMW, mycie auta Kraków, korekta lakieru Kraków, detailing Kalwaria Zebrzydowska, ADMIC GARAGE, pranie tapicerki Kraków, kodowanie BMW Wadowice">
+<meta name="robots" content="index, follow">
+<meta name="author" content="ADMIC GARAGE">
+<meta property="og:title" content="ADMIC GARAGE – Detaling & Kodowanie BMW | Kraków">
+<meta property="og:description" content="Profesjonalny detaling i kodowanie BMW w Krakowie i okolicach. Dojazd do klienta!">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:url" content="https://admicgarage.pl/">
+<meta property="og:image" content="https://admicgarage.pl/logo.png">
+<meta property="og:site_name" content="ADMIC GARAGE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://admicgarage.pl/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Schema.org Local Business structured data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ADMIC GARAGE",
+  "description": "Profesjonalny detaling samochodowy i kodowanie BMW. CarPlay, Android Auto, aktywacja ukrytych funkcji. Dojazd do klienta.",
+  "url": "https://admicgarage.pl",
+  "telephone": "+48000000000",
+  "email": "kontakt@admicgarage.pl",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kalwaria Zebrzydowska",
+    "addressRegion": "Małopolska",
+    "addressCountry": "PL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "49.8586",
+    "longitude": "19.6825"
+  },
+  "areaServed": [
+    "Kraków", "Kalwaria Zebrzydowska", "Wadowice", "Myślenice", "Skawina", "Wieliczka"
+  ],
+  "serviceType": [
+    "Detaling samochodowy", "Kodowanie BMW", "CarPlay aktywacja", "Pranie tapicerki", "Korekta lakieru"
+  ],
+  "openingHours": "Mo-Su 08:00-20:00",
+  "priceRange": "$$"
+}
+</script>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="logo"><img src="logo.png" alt="ADMIC GARAGE" class="logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="#uslugi">Usługi</a></li>
+      <li><a href="#kodowanie">Kodowanie BMW</a></li>
+      <li><a href="#realizacje">Realizacje</a></li>
+      <li><a href="#obszar">Zasięg</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="tel:+48000000000" class="btn-call" aria-label="Zadzwoń do ADMIC GARAGE">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Zadzwoń
+      </a>
+      <a href="#kontakt" class="btn-nav-cta">Umów wizytę</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Menu mobilne">
+  <a href="#uslugi" onclick="closeMenu()">Usługi</a>
+  <a href="#kodowanie" onclick="closeMenu()">Kodowanie BMW</a>
+  <a href="#realizacje" onclick="closeMenu()">Realizacje</a>
+  <a href="#obszar" onclick="closeMenu()">Zasięg</a>
+  <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
+  <a href="tel:+48000000000" class="mobile-call-btn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Zadzwoń teraz
+  </a>
+</div>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Kraków &amp; okolice · Dojazd do klienta</div>
+      <h1 class="hero-title">DETALING<br>I <em>KODOWANIE</em><br>BMW</h1>
+      <p class="hero-sub">Profesjonalne mycie, detaling, pranie tapicerki i kodowanie BMW — CarPlay, Android Auto, aktywacja ukrytych funkcji. Przyjeżdżamy do Ciebie.</p>
+      <div class="hero-btns">
+        <a href="tel:+48000000000" class="btn-primary btn-call-hero">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Zadzwoń teraz
+        </a>
+        <a href="#kontakt" class="btn-secondary">Umów wizytę online</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Dojazd do klienta</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">BMW</div>
+          <div class="stat-label">Specjalizacja kodowania</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">KRK</div>
+          <div class="stat-label">Kraków i okolice</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar" role="complementary" aria-label="Kluczowe informacje">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-check" aria-hidden="true">✓</span>Dojazd do klienta – Kraków i okolice</div>
+    <div class="trust-item"><span class="trust-check" aria-hidden="true">✓</span>Kodowanie BMW: CarPlay, Android Auto, NBT, EVO</div>
+    <div class="trust-item"><span class="trust-check" aria-hidden="true">✓</span>Profesjonalny detaling i mycie</div>
+    <div class="trust-item"><span class="trust-check" aria-hidden="true">✓</span>Kalwaria Zebrzydowska · Wadowice · Kraków</div>
+  </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section id="uslugi" aria-labelledby="uslugi-title">
+  <div class="container">
+    <div class="section-label">Co robimy</div>
+    <h2 class="section-title" id="uslugi-title">NASZE USŁUGI</h2>
+    <p class="section-sub">Łączymy pasję do samochodów z profesjonalizmem. Detaling, który przywraca blask, i kodowanie, które odblokowuje pełen potencjał BMW.</p>
+    <div class="services-grid">
+
+      <article class="service-card">
+        <div class="service-tag">Detaling</div>
+        <h3 class="service-name">MYCIE &amp; PIELĘGNACJA</h3>
+        <p class="service-desc">Kompleksowe mycie zewnętrzne i wewnętrzne z użyciem profesjonalnych preparatów. Twoje auto lśni jak nowe.</p>
+        <ul class="service-list">
+          <li>Mycie ręczne zewnętrzne</li>
+          <li>Odkurzanie i czyszczenie wnętrza</li>
+          <li>Mycie silnika</li>
+          <li>Czyszczenie felg i opon</li>
+          <li>Impregnacja deski rozdzielczej</li>
+        </ul>
+        <a href="tel:+48000000000" class="service-cta">Zadzwoń i umów →</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-tag">Detaling wnętrza</div>
+        <h3 class="service-name">PRANIE TAPICERKI</h3>
+        <p class="service-desc">Głębokie czyszczenie tapicerki, dywanów i siedzeń skórzanych. Eliminujemy zapachy i przywracamy świeżość wnętrza.</p>
+        <ul class="service-list">
+          <li>Pranie foteli i podsufitki</li>
+          <li>Czyszczenie dywanów i progów</li>
+          <li>Pielęgnacja skóry</li>
+          <li>Ozonowanie wnętrza</li>
+          <li>Usuwanie zapachów</li>
+        </ul>
+        <a href="tel:+48000000000" class="service-cta">Zadzwoń i umów →</a>
+      </article>
+
+      <article class="service-card service-card--featured">
+        <div class="service-tag">Kodowanie BMW</div>
+        <h3 class="service-name">CARPLAY &amp; FUNKCJE</h3>
+        <p class="service-desc">Specjalizujemy się w kodowaniu BMW — aktywacja CarPlay, Android Auto i dziesiątek ukrytych funkcji fabrycznych.</p>
+        <ul class="service-list">
+          <li>Aktywacja Apple CarPlay / Android Auto</li>
+          <li>Bezprzewodowy CarPlay (Wireless)</li>
+          <li>Kodowanie jednostek NBT, EVO, MGU</li>
+          <li>Aktywacja ukrytych funkcji BMW</li>
+          <li>Aktualizacje map i oprogramowania</li>
+        </ul>
+        <a href="tel:+48000000000" class="service-cta">Zadzwoń i umów →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== BMW CODING ===== -->
+<section id="kodowanie" aria-labelledby="kodowanie-title">
+  <div class="container">
+    <div class="coding-grid">
+      <div class="coding-text">
+        <div class="section-label">Specjalizacja</div>
+        <h2 class="section-title" id="kodowanie-title">KODOWANIE BMW</h2>
+        <p class="section-sub">Profesjonalne kodowanie i programowanie BMW. Używamy specjalistycznego sprzętu i oprogramowania — bezpiecznie, szybko, z dojazdem do Ciebie w Krakowie i okolicach.</p>
+        <div class="coding-features">
+          <div class="coding-feature">
+            <div class="feat-dot" aria-hidden="true"></div>
+            <div>
+              <div class="feat-name">Apple CarPlay &amp; Android Auto</div>
+              <div class="feat-desc">Aktywacja i konfiguracja CarPlay przewodowego oraz bezprzewodowego w BMW z jednostkami NBT, EVO i MGU</div>
+            </div>
+          </div>
+          <div class="coding-feature">
+            <div class="feat-dot" aria-hidden="true"></div>
+            <div>
+              <div class="feat-name">Ukryte funkcje fabryczne</div>
+              <div class="feat-desc">Digital speedometer, video in motion, kamera cofania, ambient lighting, zmiana dźwięków — setki opcji do odblokowania</div>
+            </div>
+          </div>
+          <div class="coding-feature">
+            <div class="feat-dot" aria-hidden="true"></div>
+            <div>
+              <div class="feat-name">Aktualizacje map i oprogramowania</div>
+              <div class="feat-desc">Aktualizacja map nawigacji, aktualizacja oprogramowania głowy, FSC kody i licencje</div>
+            </div>
+          </div>
+          <div class="coding-feature">
+            <div class="feat-dot" aria-hidden="true"></div>
+            <div>
+              <div class="feat-name">Diagnostyka i parametryzacja</div>
+              <div class="feat-desc">Odczyt i kasowanie błędów, parametryzacja układów elektronicznych, retrofit i montaż nowych modułów</div>
+            </div>
+          </div>
+        </div>
+        <a href="tel:+48000000000" class="btn-primary btn-coding-call">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Zapytaj o kodowanie BMW
+        </a>
+      </div>
+      <div class="coding-visual">
+        <div class="code-block" aria-label="Przykład kodowania BMW">
+          <div class="code-comment">// ADMIC GARAGE — BMW Coding</div>
+          <div class="code-comment">// Aktywacja CarPlay NBT EVO</div>
+          <br>
+          <div><span class="code-key">unit</span>: <span class="code-val">"NBT_EVO"</span></div>
+          <div><span class="code-key">carplay</span>: <span class="code-val">true</span></div>
+          <div><span class="code-key">wireless</span>: <span class="code-val">true</span></div>
+          <div><span class="code-key">android_auto</span>: <span class="code-val">true</span></div>
+          <div><span class="code-key">video_in_motion</span>: <span class="code-val">true</span></div>
+          <div><span class="code-key">digital_speedo</span>: <span class="code-val">true</span></div>
+          <br>
+          <div><span class="code-func">status</span>: <span class="code-ok">"ACTIVATED ✓"</span></div>
+        </div>
+        <div class="bmw-series">
+          <div class="bmw-series-label">Obsługiwane serie BMW</div>
+          <div class="bmw-tags">
+            <span class="bmw-tag">F-seria</span>
+            <span class="bmw-tag">G-seria</span>
+            <span class="bmw-tag">E-seria</span>
+            <span class="bmw-tag">X-serie</span>
+            <span class="bmw-tag">Mini</span>
+            <span class="bmw-tag">i-seria</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY — BEFORE / AFTER ===== -->
+<section id="realizacje" aria-labelledby="realizacje-title">
+  <div class="container">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title" id="realizacje-title">NASZE REALIZACJE</h2>
+    <p class="section-sub">Każde auto traktujemy jak własne. Zobacz efekt naszej pracy — przed i po.</p>
+
+    <div class="ba-grid" id="baGrid">
+      <!-- Realization cards injected here. Each card always contains real
+           <img> elements in the DOM (not CSS backgrounds), so photos are
+           crawlable and indexable by search engines regardless of JS/CSS state. -->
+    </div>
+
+    <div class="ba-loadmore-wrap" id="baLoadMoreWrap">
+      <button class="ba-loadmore-btn" id="baLoadMoreBtn" type="button">Pokaż więcej realizacji</button>
+    </div>
+
+    <div class="gallery-empty" id="galleryEmpty">
+      <div class="gallery-empty-icon" aria-hidden="true">📸</div>
+      <p>Zdjęcia realizacji pojawią się tutaj wkrótce</p>
+      <p class="gallery-empty-sub">Obserwuj nas na Instagramie i Facebooku!</p>
+    </div>
+
+    <div class="gallery-actions">
+      <!-- Upload UI is hidden from regular visitors.
+           Team access only: click the logo 5x or open with ?admin=1 in the URL. -->
+      <input type="file" id="photoUploadBefore" accept="image/*" style="display:none">
+      <input type="file" id="photoUploadAfter" accept="image/*" style="display:none">
+
+      <!-- Password modal -->
+      <div class="upload-modal" id="uploadModal" role="dialog" aria-modal="true" aria-label="Weryfikacja hasła">
+        <div class="upload-modal-box">
+          <div class="upload-modal-title">Hasło administratora</div>
+          <p class="upload-modal-sub">Tylko dla zespołu ADMIC GARAGE</p>
+          <input type="password" id="galleryPassword" class="upload-modal-input" placeholder="Wpisz hasło..." autocomplete="current-password">
+          <div class="upload-modal-error" id="galleryPasswordError">Nieprawidłowe hasło</div>
+          <div class="upload-modal-btns">
+            <button class="upload-modal-cancel" onclick="hideUploadPrompt()">Anuluj</button>
+            <button class="upload-modal-confirm" onclick="confirmUploadPassword()">Dalej →</button>
+          </div>
+        </div>
+      </div>
+      <div class="upload-modal-overlay" id="uploadModalOverlay" onclick="hideUploadPrompt()"></div>
+
+      <!-- Admin: add new realization (before/after OR single "result" photo) -->
+      <div class="ba-admin-modal" id="baAdminModal" role="dialog" aria-modal="true" aria-label="Dodaj realizację">
+        <div class="ba-admin-box">
+          <div class="upload-modal-title">Dodaj realizację</div>
+          <p class="upload-modal-sub">Wybierz typ, wgraj zdjęcia i dodaj krótki opis</p>
+
+          <label class="ba-admin-label">Typ realizacji</label>
+          <div class="ba-type-toggle" id="baTypeToggle">
+            <button class="ba-type-btn is-active" id="baTypeBA" type="button" data-type="ba">Przed / Po</button>
+            <button class="ba-type-btn" id="baTypeSingle" type="button" data-type="single">Tylko efekt</button>
+          </div>
+          <p class="ba-type-hint" id="baTypeHint">Dla detailingu, korekty lakieru, prania tapicerki — porównanie przed i po.</p>
+
+          <label class="ba-admin-label">Tytuł realizacji</label>
+          <input type="text" id="baTitleInput" class="upload-modal-input" placeholder="np. Korekta lakieru — BMW F30">
+
+          <div class="ba-admin-uploads" id="baAdminUploads">
+            <button class="ba-admin-pick" id="baPickBefore" type="button">+ Zdjęcie PRZED</button>
+            <button class="ba-admin-pick" id="baPickAfter" type="button">+ Zdjęcie PO</button>
+          </div>
+          <div class="ba-admin-preview" id="baAdminPreview"></div>
+
+          <div class="upload-modal-error" id="baAdminError">Dodaj wymagane zdjęcia i tytuł.</div>
+          <div class="upload-modal-btns">
+            <button class="upload-modal-cancel" onclick="hideBaAdminModal()">Anuluj</button>
+            <button class="upload-modal-confirm" id="baAdminSave">Zapisz →</button>
+          </div>
+        </div>
+      </div>
+      <div class="upload-modal-overlay" id="baAdminOverlay" onclick="hideBaAdminModal()"></div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd zdjęcia" onclick="closeLightbox()">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Zamknij">&times;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="Realizacja ADMIC GARAGE">
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE AREA ===== -->
+<section id="obszar" aria-labelledby="obszar-title">
+  <div class="container">
+    <div class="section-label">Zasięg działania</div>
+    <h2 class="section-title" id="obszar-title">DOJEŻDŻAMY DO CIEBIE</h2>
+    <p class="section-sub">Działamy na terenie Krakowa i okolic w promieniu ok. 50 km. Kalwaria Zebrzydowska to nasza baza — Kraków to nasz główny rynek.</p>
+    <div class="area-grid">
+      <div class="area-map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81536.44!2d19.6825!3d49.8586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716918e226e0001%3A0x6a83a40b2e96f0e7!2sKalwaria%20Zebrzydowska!5e0!3m2!1spl!2spl!4v1700000000000"
+          class="area-map"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa zasięgu ADMIC GARAGE"
+        ></iframe>
+      </div>
+      <div class="area-info">
+        <div class="area-card">
+          <div class="area-city">KRAKÓW</div>
+          <div class="area-detail">Główny obszar działania — centrum, dzielnice, okolice</div>
+          <span class="area-badge">Priorytet</span>
+        </div>
+        <div class="area-card">
+          <div class="area-city">KALWARIA ZEBRZYDOWSKA</div>
+          <div class="area-detail">Nasza baza — siedziba firmy ADMIC GARAGE</div>
+          <span class="area-badge">Siedziba</span>
+        </div>
+        <div class="area-card">
+          <div class="area-city">WADOWICE · MYŚLENICE · SKAWINA</div>
+          <div class="area-detail">Dojeżdżamy bez dopłat w promieniu 30 km</div>
+          <span class="area-badge">Okolice</span>
+        </div>
+        <div class="area-card">
+          <div class="area-city">DOJAZD DO KLIENTA</div>
+          <div class="area-detail">Przyjeżdżamy pod Twój dom, biuro lub parking. Zero zbędnych dojazdów z Twojej strony.</div>
+          <span class="area-badge">Wygodnie</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="kontakt" aria-labelledby="kontakt-title">
+  <div class="container">
+    <div class="section-label">Umów wizytę</div>
+    <h2 class="section-title" id="kontakt-title">KONTAKT</h2>
+    <p class="section-sub">Napisz do nas — wycena jest bezpłatna. Odpiszemy w ciągu kilku godzin i ustalimy termin dojazdu.</p>
+    <div class="contact-grid">
+
+      <!-- ======================================================
+           FORMULARZ — FORMSPREE (wysyłanie maili, darmowe)
+           Jak skonfigurować (5 minut):
+           1. Wejdź na https://formspree.io i załóż darmowe konto
+           2. Kliknij "New Form", podaj swój e-mail
+           3. Skopiuj swój Form ID (wygląda jak: xpzvwkrb)
+           4. Wklej ID poniżej: action="https://formspree.io/f/TUTAJ_WKLEJ_ID"
+           Gotowe — każde zapytanie trafi na Twój e-mail!
+      ====================================================== -->
+      <form
+        class="contact-form"
+        id="contactForm"
+        action="https://formspree.io/f/TWOJ_FORMSPREE_ID"
+        method="POST"
+        onsubmit="handleFormSubmit(event)"
+        novalidate
+      >
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="Nowe zapytanie – ADMIC GARAGE">
+
+        <div class="form-group">
+          <label class="form-label" for="fname">Imię i nazwisko</label>
+          <input type="text" id="fname" name="name" class="form-input" placeholder="Jan Kowalski" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fphone">Telefon</label>
+          <input type="tel" id="fphone" name="phone" class="form-input" placeholder="+48 000 000 000" required autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fservice">Rodzaj usługi</label>
+          <select id="fservice" name="service" class="form-input form-select">
+            <option value="">Wybierz usługę...</option>
+            <option>Mycie podstawowe</option>
+            <option>Detaling premium</option>
+            <option>Pranie tapicerki</option>
+            <option>Kodowanie BMW – CarPlay</option>
+            <option>Kodowanie BMW – ukryte funkcje</option>
+            <option>Diagnostyka BMW</option>
+            <option>Pakiet: detaling + kodowanie</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fcar">Marka i model auta</label>
+          <input type="text" id="fcar" name="car" class="form-input" placeholder="np. BMW F30 320i 2016">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fmsg">Wiadomość (opcjonalnie)</label>
+          <textarea id="fmsg" name="message" class="form-input form-textarea" placeholder="Opisz czego potrzebujesz..."></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="formSubmitBtn">Wyślij zapytanie →</button>
+        <div id="formSuccess" class="form-success" role="alert" aria-live="polite"></div>
+        <div id="formError" class="form-error" role="alert" aria-live="polite"></div>
+      </form>
+
+      <div class="contact-info">
+        <div class="contact-call-card">
+          <div class="ccc-label">Wolisz zadzwonić?</div>
+          <a href="tel:+48000000000" class="ccc-number">+48 000 000 000</a>
+          <p class="ccc-hours">Codziennie, godz. 8:00 – 20:00</p>
+          <a href="tel:+48000000000" class="btn-primary btn-ccc-call">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Zadzwoń teraz
+          </a>
+        </div>
+        <div class="info-block">
+          <div class="info-label">E-mail</div>
+          <a href="mailto:kontakt@admicgarage.pl" class="info-val info-link">kontakt@admicgarage.pl</a>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Lokalizacja bazy</div>
+          <div class="info-val">Kalwaria Zebrzydowska</div>
+          <div class="info-sub">Działamy mobilnie — Kraków i okolice</div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Social media</div>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Instagram ADMIC GARAGE">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="#" class="social-btn" aria-label="Facebook ADMIC GARAGE">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img src="logo.png" alt="ADMIC GARAGE" class="footer-logo-img">
+      <div class="footer-tagline">Detaling &amp; Kodowanie BMW · Kraków i okolice</div>
+      <div class="footer-seo">detaling Kraków, kodowanie BMW Kraków, CarPlay BMW Kraków, mycie auta Kraków, detailing Kalwaria Zebrzydowska, Wadowice, Myślenice, korekta lakieru Małopolska</div>
+    </div>
+    <div class="footer-right">
+      <a href="tel:+48000000000" class="footer-call">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +48 000 000 000
+      </a>
+      <div class="footer-copy">© 2025 ADMIC GARAGE · Kalwaria Zebrzydowska</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating call button (mobile) -->
+<a href="tel:+48000000000" class="fab-call" aria-label="Zadzwoń do ADMIC GARAGE">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
