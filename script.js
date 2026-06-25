@@ -17,8 +17,8 @@ var GALLERY_PASSWORD = 'ADMIC2025';  // <-- hasło do dodawania zdjęć
 //   4. Wklej je poniżej
 // Jeśli zostawisz to puste, galeria działa tymczasowo w trybie lokalnym
 // (localStorage) — czyli widoczna tylko w Twojej przeglądarce.
-var SUPABASE_URL = '';      // <-- np. 'https://xxxxx.supabase.co'
-var SUPABASE_ANON_KEY = ''; // <-- np. 'eyJhbGci...'
+var SUPABASE_URL = 'https://qsidohqwurbizrqjsnww.supabase.co';      // <-- np. 'https://xxxxx.supabase.co'
+var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzaWRvaHF3dXJiaXpycWpzbnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0MDIwMzAsImV4cCI6MjA5Nzk3ODAzMH0.oOh_GYew_wDuZdOHE2RGkwyJf6kjNsI-KqBeB7y6wlQ'; // <-- np. 'eyJhbGci...'
 var SUPABASE_TABLE = 'realizacje';
 
 var supabaseReady = !!(SUPABASE_URL && SUPABASE_ANON_KEY);
