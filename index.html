@@ -28,7 +28,11 @@
 <link rel="canonical" href="https://admic-detaling.pl/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Preload hero image - LCP fix -->
+<link rel="preload" as="image" href="hero-bg.webp" type="image/webp">
+<!-- Czcionki ładowane nieblokująco (media print trick) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" href="logo.png">
 
@@ -138,7 +142,33 @@
 
 <!-- ===== HERO ===== -->
 <section id="hero">
-  <div class="hero-bg"></div>
+  <!-- SEO: img zaindeksowane przez Google Images, fetchpriority=high = LCP boost -->
+  <div class="hero-bg" role="img" aria-label="BMW E38 – detaling i kodowanie BMW Kraków, ADMIC GARAGE">
+    <picture>
+      <!-- Mobile: mała wersja WebP -->
+      <source
+        srcset="hero-bg-mobile.webp"
+        type="image/webp"
+        media="(max-width: 768px)"
+      >
+      <!-- Desktop: pełna wersja WebP -->
+      <source
+        srcset="hero-bg.webp"
+        type="image/webp"
+      >
+      <!-- Fallback JPG dla starszych przeglądarek -->
+      <img
+        src="hero-bg.jpg"
+        alt="Profesjonalny detaling BMW w Krakowie – ADMIC GARAGE, kodowanie BMW CarPlay, mycie i pielęgnacja samochodów"
+        class="hero-bg-img"
+        fetchpriority="high"
+        decoding="sync"
+        width="1920"
+        height="2560"
+      >
+    </picture>
+    <div class="hero-overlay"></div>
+  </div>
   <div class="hero-line"></div>
   <div class="container">
     <div class="hero-content">
