@@ -186,6 +186,8 @@ section {
   height: 42px;
   width: auto;
   display: block;
+  aspect-ratio: 1 / 1;  /* zapobiega CLS podczas ładowania */
+  contain: layout;
 }
 
 .nav-links {
@@ -543,6 +545,8 @@ section {
 /* ===== SERVICES ===== */
 #uslugi {
   background: var(--dark);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 800px;
 }
 
 .services-grid {
@@ -655,6 +659,8 @@ section {
 #kodowanie {
   background: var(--dark2);
   padding: 100px 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 900px;
 }
 
 .coding-grid {
@@ -769,6 +775,8 @@ section {
 /* ===== GALLERY ===== */
 #realizacje {
   background: var(--black);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 700px;
 }
 
 .ba-grid {
@@ -1022,6 +1030,8 @@ section {
 /* ===== SERVICE AREA ===== */
 #obszar {
   background: var(--black);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 700px;
 }
 
 .area-grid {
@@ -1093,6 +1103,8 @@ section {
 /* ===== CONTACT ===== */
 #kontakt {
   background: var(--dark);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 700px;
 }
 
 .contact-grid {
@@ -1329,6 +1341,7 @@ footer {
   width: auto;
   display: block;
   margin-bottom: 8px;
+  aspect-ratio: 1 / 1;
 }
 
 .footer-tagline {

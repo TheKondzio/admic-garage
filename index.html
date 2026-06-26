@@ -33,8 +33,11 @@
 <!-- Czcionki ładowane nieblokująco (media print trick) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"></noscript>
+<!-- Preload logo for navbar -->
+<link rel="preload" as="image" href="logo.webp" type="image/webp">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" href="logo.png">
+<script src="script.js" defer></script>
 
 
 <!-- Schema.org Local Business structured data for SEO -->
@@ -100,7 +103,7 @@
 }
 </script>
 </head>
-  <!-- Google tag (gtag.js) -->
+ <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LW7GK79VZX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -114,7 +117,12 @@
 <!-- ===== NAVIGATION ===== -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#hero" class="logo"><img src="logo.png" alt="ADMIC GARAGE" class="logo-img"></a>
+    <a href="#hero" class="logo" aria-label="ADMIC GARAGE – strona główna">
+      <picture>
+        <source srcset="logo.webp" type="image/webp">
+        <img src="logo.png" alt="ADMIC GARAGE – detaling i kodowanie BMW Kraków" class="logo-img" width="160" height="48" fetchpriority="high">
+      </picture>
+    </a>
     <ul class="nav-links">
       <li><a href="#uslugi">Usługi</a></li>
       <li><a href="#kodowanie">Kodowanie BMW</a></li>
@@ -578,7 +586,10 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-left">
-      <img src="logo.png" alt="ADMIC GARAGE" class="footer-logo-img">
+      <picture>
+        <source srcset="logo.webp" type="image/webp">
+        <img src="logo.png" alt="ADMIC GARAGE" class="footer-logo-img" width="120" height="36" loading="lazy">
+      </picture>
       <div class="footer-tagline">Detaling &amp; Kodowanie BMW · Kraków i okolice</div>
       <div class="footer-seo">detaling Kraków, kodowanie BMW Kraków, CarPlay BMW Kraków, mycie auta Kraków, detailing Kalwaria Zebrzydowska, Wadowice, Myślenice, korekta lakieru Małopolska</div>
     </div>
@@ -597,6 +608,5 @@
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
 </a>
 
-<script src="script.js"></script>
 </body>
 </html>
