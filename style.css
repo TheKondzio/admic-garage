@@ -34,9 +34,8 @@
   --gray-light: #AAAAAA;
   --white: #F5F5F5;
   --white2: #E0E0E0;
-  /* Czcionki systemowe — zero zewnętrznych requestów, natychmiastowe ładowanie */
-  --font-display: 'Bebas Neue', 'Arial Narrow', 'Impact', Arial, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --transition: 0.22s ease;
   --max-w: 1200px;
 }
