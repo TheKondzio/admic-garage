@@ -2,6 +2,19 @@
    ADMIC GARAGE — style.css
    ============================================= */
 
+/* ===== FONT FALLBACK — zapobiega CLS przy zamianie czcionek ===== */
+@font-face {
+  font-family: 'Bebas Neue';
+  src: local('Bebas Neue');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter');
+  font-display: swap;
+}
+
 /* ===== RESET & ROOT ===== */
 *, *::before, *::after {
   margin: 0;
