@@ -716,20 +716,26 @@ loadRealizacje();
 // ===== FAQ ACCORDION =====
 document.querySelectorAll('.faq-question').forEach(function(btn) {
   btn.addEventListener('click', function() {
-    var expanded = this.getAttribute('aria-expanded') === 'true';
-    var answer = this.nextElementSibling;
+    var item = this.closest('.faq-item');
+    var isOpen = item.classList.contains('is-open');
 
-    // Zamknij wszystkie inne
-    document.querySelectorAll('.faq-question').forEach(function(other) {
-      if (other !== btn) {
-        other.setAttribute('aria-expanded', 'false');
-        var otherAnswer = other.nextElementSibling;
-        if (otherAnswer) otherAnswer.classList.remove('open');
-      }
+    // Zamknij wszystkie
+    document.querySelectorAll('.faq-item').forEach(function(el) {
+      el.classList.remove('is-open');
+      el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
     });
 
-    // Przełącz kliknięty
-    this.setAttribute('aria-expanded', String(!expanded));
-    if (answer) answer.classList.toggle('open', !expanded);
+    // Otwórz kliknięty (jeśli był zamknięty)
+    if (!isOpen) {
+      item.classList.add('is-open');
+      this.setAttribute('aria-expanded', 'true');
+      // Płynne przewinięcie do pytania jeśli za bardzo w dole
+      setTimeout(function() {
+        var rect = item.getBoundingClientRect();
+        if (rect.top < 80) {
+          window.scrollBy({ top: rect.top - 88, behavior: 'smooth' });
+        }
+      }, 50);
+    }
   });
 });
