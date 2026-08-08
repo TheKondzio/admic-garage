@@ -712,3 +712,24 @@ window.closeLightbox          = closeLightbox;
 
 // ===== INIT =====
 loadRealizacje();
+
+// ===== FAQ ACCORDION =====
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    var answer = this.nextElementSibling;
+
+    // Zamknij wszystkie inne
+    document.querySelectorAll('.faq-question').forEach(function(other) {
+      if (other !== btn) {
+        other.setAttribute('aria-expanded', 'false');
+        var otherAnswer = other.nextElementSibling;
+        if (otherAnswer) otherAnswer.classList.remove('open');
+      }
+    });
+
+    // Przełącz kliknięty
+    this.setAttribute('aria-expanded', String(!expanded));
+    if (answer) answer.classList.toggle('open', !expanded);
+  });
+});
