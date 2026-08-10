@@ -722,7 +722,7 @@ section {
   color: var(--white);
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 4px;
+  margin: 0 0 4px;
 }
 
 .feat-desc {
@@ -1090,7 +1090,7 @@ section {
   font-size: 20px;
   letter-spacing: 1px;
   color: var(--white);
-  margin-bottom: 4px;
+  margin: 0 0 4px;
 }
 
 .area-detail {
@@ -1825,6 +1825,14 @@ footer {
 }
 
 /* ===== PYTANIE ===== */
+/* h3 wrapper is for SEO/semantic heading structure only — no visual styling of its own */
+.faq-q-heading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
 .faq-question {
   width: 100%;
   background: none;
