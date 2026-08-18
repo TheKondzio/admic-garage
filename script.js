@@ -682,6 +682,10 @@ function handleFormSubmit(e) {
       successEl.textContent = '✓ Zapytanie wysłane! Odezwiemy się wkrótce.';
       successEl.style.display = 'block';
       form.reset();
+      // Śledzenie konwersji Google Ads — liczy się jako lead, tak samo jak kliknięcie telefonu
+      if (typeof gtag_report_conversion === 'function') {
+        gtag_report_conversion();
+      }
     } else {
       return response.json().then(function(data) {
         throw new Error(data.errors ? data.errors.map(function(e){ return e.message; }).join(', ') : 'Błąd wysyłania');
