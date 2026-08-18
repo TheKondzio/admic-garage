@@ -10,14 +10,20 @@
 
   gtag('config', 'AW-18396266222');
 </script>
-<!-- Event snippet for Website lead conversion page -->
+<!-- Event snippet for Website lead conversion — fires only when gtag_report_conversion() is called on click -->
 <script>
-  gtag('event', 'conversion', {'send_to': 'AW-18396266222/fbuaCJ2s0uMcEO79gsRE'});
-</script>
-
-  <!-- Event snippet for Kontakt conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18396266222/fbuaCJ2s0uMcEO79gsRE',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
