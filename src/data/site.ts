@@ -33,17 +33,17 @@ export const site = {
   // Logo — puste = tekstowe "ADMIC GARAGE" (obecny wygląd). Ustaw np.
   // "/images/logo.svg" albo "/images/logo.png" (plik wrzuć do /public/images/),
   // żeby Navbar i stopka automatycznie pokazały grafikę zamiast tekstu.
-  logo: "",
+  logo: "/images/logo.png",
   // Mapa/grafika obszaru działania w sekcji "Zasięg działania". Puste = pokazuje
   // się placeholder z pinezką. Ustaw np. "/images/mapa-obszaru.jpg" (plik do /public/images/).
-  areaMapImage: "",
+  areaMapImage: "/images/mapa.png",
   // Hero na stronie głównej — dwa niezależne, opcjonalne assety:
   // - heroBackgroundImage: duże zdjęcie w tle całej sekcji (pełnoekranowe, przyciemnione gradientem, bez rozmycia — szczegóły auta mają być wyraźnie widoczne)
   // - heroVideo: krótki film w panelu po prawej (autoplay, wyciszony, w pętli)
   // Puste = elegancki placeholder zamiast któregokolwiek z nich. Pliki wrzuć
   // do /public/images/ (zdjęcie) i /public/videos/ (film).
   heroBackgroundImage: "",
-  heroVideo: "",
+  heroVideo: "/videos/hero_film.mp4",
   // Google tag (gtag.js) — współdzielony loader dla Google Analytics (GA4)
   // i Google Ads (śledzenie konwersji). Puste = NIC się nie ładuje i baner
   // zgody na cookies się nie pokazuje (bo nie ma czego zapytać o zgodę —
