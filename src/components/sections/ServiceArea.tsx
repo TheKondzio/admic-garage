@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { IconPin } from "@/components/ui/icons";
 import { site } from "@/data/site";
+import { Reveal } from "@/components/ui/Reveal";
 
 const areas = [
   {
@@ -31,13 +32,15 @@ export function ServiceArea() {
   return (
     <section id="obszar" className="bg-ink-900/40 py-20 sm:py-28">
       <Container>
-        <SectionHeading
-          eyebrow="Zasięg działania"
-          title="Dojeżdżamy do Ciebie"
-          description={`Kraków i okolice to nasz priorytet — pracujemy tam na co dzień. Dojeżdżamy też regularnie do Wadowic, a nasza baza to ${site.base.city}. ${site.serviceArea.note}`}
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Zasięg działania"
+            title="Dojeżdżamy do Ciebie"
+            description={`Kraków i okolice to nasz priorytet — pracujemy tam na co dzień. Dojeżdżamy też regularnie do Wadowic, a nasza baza to ${site.base.city}. ${site.serviceArea.note}`}
+          />
+        </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+        <Reveal className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
           {/* Mapa/grafika obszaru działania — ustaw site.areaMapImage, żeby pokazać realny obraz. */}
           <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden rounded border border-ink-800 bg-ink-900">
             {site.areaMapImage ? (
@@ -58,7 +61,7 @@ export function ServiceArea() {
 
           <div className="grid gap-4">
             {areas.map((area) => (
-              <div key={area.title} className="rounded border border-ink-800 bg-ink-900 p-5">
+              <div key={area.title} className="rounded border border-ink-800 bg-ink-900 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-ink-700">
                 <div className="flex items-center justify-between">
                   <h3 className="font-display text-base font-semibold text-paper-100">
                     {area.title}
@@ -71,7 +74,7 @@ export function ServiceArea() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

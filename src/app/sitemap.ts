@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/data/site";
 import { confirmedServices } from "@/data/services";
 import { projects } from "@/data/projects";
+import { localSeoPages } from "@/data/localSeo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -34,5 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.4,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...projectRoutes];
+  // Lokalne podstrony SEO (kodowanie + detailing per miasto).
+  const localSeoRoutes: MetadataRoute.Sitemap = localSeoPages.map((p) => ({
+    url: `${site.url}/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...projectRoutes, ...localSeoRoutes];
 }

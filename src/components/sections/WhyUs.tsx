@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal";
 
 const reasons = [
   {
@@ -23,20 +24,22 @@ export function WhyUs() {
   return (
     <section className="bg-ink-900/40 py-20 sm:py-28">
       <Container>
-        <SectionHeading eyebrow="Dlaczego ADMIC GARAGE" title="Na czym możesz polegać" />
+        <Reveal>
+          <SectionHeading eyebrow="Dlaczego ADMIC GARAGE" title="Na czym możesz polegać" />
 
-        <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded border border-ink-800 bg-ink-800 sm:grid-cols-3">
-          {reasons.map((reason) => (
-            <div key={reason.title} className="bg-ink-950 p-6 sm:p-8">
-              <h3 className="font-display text-base font-semibold text-paper-100">
-                {reason.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-paper-300">
-                {reason.description}
-              </p>
-            </div>
-          ))}
-        </div>
+          <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded border border-ink-800 bg-ink-800 sm:grid-cols-3">
+            {reasons.map((reason) => (
+              <div key={reason.title} className="bg-ink-950 p-6 transition-colors duration-300 hover:bg-ink-900 sm:p-8">
+                <h3 className="font-display text-base font-semibold text-paper-100">
+                  {reason.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-paper-300">
+                  {reason.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

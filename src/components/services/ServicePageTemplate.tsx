@@ -7,6 +7,7 @@ import { RelatedServices } from "@/components/services/RelatedServices";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { ProjectPreview } from "@/components/projects/ProjectPreview";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Reveal } from "@/components/ui/Reveal";
 import { getRelatedServices } from "@/data/services";
 import { getProjectsByService } from "@/data/projects";
 import { site } from "@/data/site";
@@ -50,6 +51,8 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         ]}
       />
 
+      {/* Hero podstrony usługi celowo BEZ animacji wejścia — to on jest
+          krytyczny dla LCP, więc musi się wyrenderować natychmiast. */}
       <ServiceHero service={service} />
 
       {/* GŁÓWNA CZĘŚĆ: treść (70%) + sticky panel kontaktowy (30%) */}
@@ -59,7 +62,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
             {/* LEWA KOLUMNA — treść */}
             <div className="space-y-14 sm:space-y-16">
               {service.intro && (
-                <div>
+                <Reveal>
                   <SectionHeading title="Czym to jest?" />
                   <div className="mt-5 space-y-4">
                     {service.intro.map((paragraph) => (
@@ -68,18 +71,18 @@ export function ServicePageTemplate({ service }: { service: Service }) {
                       </p>
                     ))}
                   </div>
-                </div>
+                </Reveal>
               )}
 
               {service.subSections && (
-                <div>
+                <Reveal>
                   {service.subSectionsHeading && <SectionHeading title={service.subSectionsHeading} />}
                   <div className="mt-5 space-y-5">
                     {service.subSections.map((sub) => (
                       <div
                         key={sub.id}
                         id={sub.id}
-                        className="scroll-mt-24 rounded border border-ink-800 bg-ink-900 p-5 sm:p-6"
+                        className="scroll-mt-24 rounded border border-ink-800 bg-ink-900 p-5 transition-colors duration-300 hover:border-ink-700 sm:p-6"
                       >
                         <h3 className="font-display text-lg font-semibold text-paper-100">{sub.title}</h3>
                         <p className="mt-2 text-sm leading-relaxed text-paper-300">{sub.description}</p>
@@ -94,11 +97,11 @@ export function ServicePageTemplate({ service }: { service: Service }) {
                       </div>
                     ))}
                   </div>
-                </div>
+                </Reveal>
               )}
 
               {service.forWho && (
-                <div>
+                <Reveal>
                   <SectionHeading title="Dla kogo jest ta usługa?" />
                   <ul className="mt-5 space-y-3">
                     {service.forWho.map((item) => (
@@ -108,32 +111,32 @@ export function ServicePageTemplate({ service }: { service: Service }) {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Reveal>
               )}
 
               {service.whatWeDo && (
-                <div>
+                <Reveal>
                   <SectionHeading title="Co dokładnie robimy?" />
                   <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                     {service.whatWeDo.map((item) => (
                       <li
                         key={item}
-                        className="flex gap-3 rounded border border-ink-800 bg-ink-900 p-4 text-sm text-paper-200"
+                        className="flex gap-3 rounded border border-ink-800 bg-ink-900 p-4 text-sm text-paper-200 transition-colors duration-300 hover:border-ink-700"
                       >
                         <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                         {item}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Reveal>
               )}
 
               {service.highlights && (
-                <div>
+                <Reveal>
                   <SectionHeading title="Popularne rozwiązania" />
                   <div className="mt-5 grid gap-5 sm:grid-cols-2">
                     {service.highlights.map((h) => (
-                      <div key={h.title} className="rounded border border-ink-800 bg-ink-900 p-5">
+                      <div key={h.title} className="rounded border border-ink-800 bg-ink-900 p-5 transition-colors duration-300 hover:border-ink-700">
                         <h3 className="font-display text-base font-semibold text-paper-100">{h.title}</h3>
                         <p className="mt-2 text-sm leading-relaxed text-paper-300">{h.description}</p>
                       </div>
@@ -144,11 +147,11 @@ export function ServicePageTemplate({ service }: { service: Service }) {
                       {service.compatibilityNote}
                     </p>
                   )}
-                </div>
+                </Reveal>
               )}
 
               {service.benefits && (
-                <div>
+                <Reveal>
                   <SectionHeading title="Co zyskujesz?" />
                   <ul className="mt-5 space-y-3">
                     {service.benefits.map((item) => (
@@ -158,11 +161,11 @@ export function ServicePageTemplate({ service }: { service: Service }) {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Reveal>
               )}
 
               {service.process && (
-                <div>
+                <Reveal>
                   <SectionHeading title="Jak wygląda realizacja?" />
                   <ol className="mt-6 grid gap-6 sm:grid-cols-2">
                     {service.process.map((step) => (
@@ -181,19 +184,25 @@ export function ServicePageTemplate({ service }: { service: Service }) {
                       {service.priceNote}
                     </p>
                   )}
-                </div>
+                </Reveal>
               )}
 
               {service.faq && (
-                <div id="faq">
-                  <SectionHeading title={`FAQ: ${service.navLabel}`} />
-                  <div className="mt-5">
-                    <FaqAccordion items={service.faq} />
+                <Reveal>
+                  <div id="faq">
+                    <SectionHeading title={`FAQ: ${service.navLabel}`} />
+                    <div className="mt-5">
+                      <FaqAccordion items={service.faq} />
+                    </div>
                   </div>
-                </div>
+                </Reveal>
               )}
 
-              {related.length > 0 && <RelatedServices services={related} />}
+              {related.length > 0 && (
+                <Reveal>
+                  <RelatedServices services={related} />
+                </Reveal>
+              )}
             </div>
 
             {/* PRAWA KOLUMNA — panel kontaktowy, sticky na desktopie */}
@@ -207,15 +216,17 @@ export function ServicePageTemplate({ service }: { service: Service }) {
       {/* GALERIA / REALIZACJE ZWIĄZANE Z TĄ USŁUGĄ — pełna szerokość */}
       <section className="border-t border-ink-800 bg-ink-900/40 py-16 sm:py-20">
         <Container className="max-w-[1200px]">
-          <h2 className="font-display text-2xl font-bold text-paper-100 sm:text-3xl">
-            Sprawdź <span className="text-accent">realizacje: {service.navLabel.toLowerCase()}</span>
-          </h2>
-          <p className="mt-3 max-w-2xl text-sm text-paper-400">
-            Każde auto traktujemy indywidualnie — zobacz, jak wygląda ta usługa w praktyce.
-          </p>
-          <div className="mt-8">
-            <ProjectPreview projects={projects} allHref="/realizacje" />
-          </div>
+          <Reveal>
+            <h2 className="font-display text-2xl font-bold text-paper-100 sm:text-3xl">
+              Sprawdź <span className="text-accent">realizacje: {service.navLabel.toLowerCase()}</span>
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm text-paper-400">
+              Każde auto traktujemy indywidualnie — zobacz, jak wygląda ta usługa w praktyce.
+            </p>
+            <div className="mt-8">
+              <ProjectPreview projects={projects} allHref="/realizacje" />
+            </div>
+          </Reveal>
         </Container>
       </section>
     </>

@@ -15,6 +15,13 @@ const nextConfig = {
       { source: "/uslugi/retrofit-konwersje", destination: "/uslugi/multimedia-retrofit", permanent: true },
       { source: "/uslugi/detailing", destination: "/uslugi/mycie-detailingowe", permanent: true },
       { source: "/uslugi/pranie-tapicerki", destination: "/uslugi/mycie-detailingowe", permanent: true },
+      // Lista lokalnych podstron miast została skorygowana — te 3 miasta
+      // zastąpiono innymi (patrz src/data/localSeo.ts). Nie ma sensownego
+      // odpowiednika 1:1 między starym a nowym miastem, więc przekierowujemy
+      // na katalog usług zamiast zostawiać 404.
+      { source: "/detailing-i-kodowanie-oswiecim", destination: "/uslugi", permanent: true },
+      { source: "/detailing-i-kodowanie-zator", destination: "/uslugi", permanent: true },
+      { source: "/detailing-i-kodowanie-bielsko-biala", destination: "/uslugi", permanent: true },
     ];
   },
 };

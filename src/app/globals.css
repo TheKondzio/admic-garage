@@ -7,11 +7,36 @@
     scroll-behavior: smooth;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   body {
     @apply bg-ink-950 text-paper-100 antialiased;
   }
 
   ::selection {
     @apply bg-accent/30 text-paper-100;
+  }
+}
+
+/* Animacja wejścia sekcji (Reveal.tsx) — istnieje WYŁĄCZNIE tutaj, w bloku
+   prefers-reduced-motion: no-preference. Dla osób z ustawionym ograniczeniem
+   ruchu w systemie ta reguła się nie stosuje, więc nawet gdyby JS dodał klasę
+   .reveal-pending, nie miałaby żadnego efektu — treść zostaje od razu w pełni
+   widoczna. Animowane są wyłącznie opacity/transform (praca kompozytora GPU),
+   więc zero wpływu na layout i CLS. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-pending {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }

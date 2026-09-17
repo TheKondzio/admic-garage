@@ -54,23 +54,6 @@ export function Hero() {
             </Button>
             <Button href="#uslugi" variant="secondary">Zobacz ofertę</Button>
           </div>
-
-          <div className="mt-12 flex flex-wrap items-stretch gap-x-8 gap-y-4 border-t border-ink-800 pt-6">
-            <div className="flex flex-col gap-1">
-              <span className="text-base font-semibold text-paper-100">4 marki</span>
-              <span className="text-xs uppercase tracking-wider text-paper-500">Kodowanie</span>
-            </div>
-            <span className="hidden w-px bg-ink-800 sm:block" />
-            <div className="flex flex-col gap-1">
-              <span className="text-base font-semibold text-paper-100">Kraków</span>
-              <span className="text-xs uppercase tracking-wider text-paper-500">Na co dzień</span>
-            </div>
-            <span className="hidden w-px bg-ink-800 sm:block" />
-            <div className="flex flex-col gap-1">
-              <span className="text-base font-semibold text-paper-100">Dojazd</span>
-              <span className="text-xs uppercase tracking-wider text-paper-500">Do klienta</span>
-            </div>
-          </div>
         </div>
 
         {/* Panel po prawej — film w akcji (kodowanie / diagnostyka / detailing).

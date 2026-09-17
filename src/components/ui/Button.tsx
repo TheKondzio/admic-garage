@@ -34,7 +34,7 @@ type AsButton = CommonProps & {
 export function Button(props: AsLink | AsButton) {
   const { children, variant = "primary", className } = props;
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded px-5 py-3 text-sm font-semibold tracking-wide transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none",
+    "inline-flex items-center justify-center gap-2 rounded px-5 py-3 text-sm font-semibold tracking-wide transition-all duration-150 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none disabled:hover:translate-y-0",
     variantClasses[variant],
     className
   );

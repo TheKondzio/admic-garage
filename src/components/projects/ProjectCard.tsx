@@ -14,7 +14,7 @@ export function ProjectCard({ slug, title, category, vehicle, coverImage }: Proj
   return (
     <Link
       href={`/realizacje/${slug}`}
-      className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded border border-ink-800 bg-ink-900"
+      className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded border border-ink-800 bg-ink-900 transition-all duration-300 hover:-translate-y-1 hover:border-ink-700 hover:shadow-card"
     >
       {coverImage ? (
         <Image

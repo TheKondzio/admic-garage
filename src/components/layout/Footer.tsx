@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { navLinks } from "@/data/nav";
 import { confirmedServices } from "@/data/services";
+import { localSeoPages } from "@/data/localSeo";
 import { site } from "@/data/site";
 import { MadeBy } from "@/components/layout/MadeBy";
 import { Logo } from "@/components/layout/Logo";
@@ -9,7 +10,7 @@ import { Logo } from "@/components/layout/Logo";
 export function Footer() {
   return (
     <footer className="border-t border-ink-800 bg-ink-950">
-      <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <Container className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8 py-14">
         <div>
           <Logo />
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-paper-500">
@@ -25,6 +26,19 @@ export function Footer() {
               <li key={s.slug}>
                 <Link href={`/uslugi/${s.slug}`} className="text-sm text-paper-500 hover:text-paper-200">
                   {s.navLabel}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-wider text-paper-100">Lokalne SEO</p>
+          <ul className="mt-4 space-y-2">
+            {localSeoPages.map((p) => (
+              <li key={p.slug}>
+                <Link href={`/${p.slug}`} className="text-sm text-paper-500 hover:text-paper-200">
+                  Kodowanie samochodów {p.city}
                 </Link>
               </li>
             ))}

@@ -10,7 +10,7 @@ export function ServiceTile({ service, size = "md" }: { service: Service; size?:
     <Link
       href={href}
       className={cn(
-        "group relative flex flex-col justify-end overflow-hidden rounded border border-ink-800 bg-ink-900",
+        "group relative flex flex-col justify-end overflow-hidden rounded border border-ink-800 bg-ink-900 transition-all duration-300 hover:-translate-y-1 hover:border-ink-700 hover:shadow-card",
         size === "lg" ? "aspect-[16/10] sm:aspect-[16/9]" : "aspect-[4/3]"
       )}
     >
@@ -48,7 +48,7 @@ export function ServiceTile({ service, size = "md" }: { service: Service; size?:
         <p className="mt-2 max-w-xs text-sm leading-relaxed text-paper-300">
           {service.tileDescription}
         </p>
-        <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-light group-hover:text-accent">
+        <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-light transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent">
           Zobacz szczegóły →
         </span>
       </div>

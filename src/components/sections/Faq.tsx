@@ -4,6 +4,7 @@ import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqItems } from "@/data/faq";
 import Link from "next/link";
+import { Reveal } from "@/components/ui/Reveal";
 
 // Homepage pokazuje skrót najważniejszych pytań ogólnych — pełna lista
 // (plus pytania per usługa) jest na dedykowanej stronie /faq.
@@ -24,21 +25,23 @@ export function Faq() {
     <section id="faq" className="bg-ink-950 py-20 sm:py-28">
       <JsonLd data={jsonLd} />
       <Container className="max-w-3xl">
-        <SectionHeading
-          eyebrow="Pytania i odpowiedzi"
-          title="Często zadawane pytania"
-          align="center"
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Pytania i odpowiedzi"
+            title="Często zadawane pytania"
+            align="center"
+          />
 
-        <div className="mt-10">
-          <FaqAccordion items={homepageFaq} />
-        </div>
+          <div className="mt-10">
+            <FaqAccordion items={homepageFaq} />
+          </div>
 
-        <div className="mt-6 text-center">
-          <Link href="/faq" className="text-sm font-semibold text-accent-light hover:text-accent">
-            Zobacz pełne FAQ →
-          </Link>
-        </div>
+          <div className="mt-6 text-center">
+            <Link href="/faq" className="text-sm font-semibold text-accent-light hover:text-accent">
+              Zobacz pełne FAQ →
+            </Link>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );
