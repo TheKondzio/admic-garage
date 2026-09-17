@@ -29,7 +29,7 @@ export const services: Service[] = [
     tileImage: "", // ścieżka np. "/images/services/mycie-detailingowe-tile.jpg"
 
     heroTitle: "Mycie detailingowe",
-    heroImage: "", // ścieżka np. "/images/services/mycie-detailingowe-hero.jpg"
+    heroImage: "/images/mycie_main.jpeg", // ścieżka np. "/images/services/mycie-detailingowe-hero.jpg"
     heroSubtitle: "Mycie detailingowe, kompleksowe czyszczenie wnętrza oraz pranie tapicerki.",
     metaTitle: "Mycie detailingowe Kraków — mycie, wnętrze, pranie tapicerki",
     metaDescription:
@@ -97,7 +97,7 @@ export const services: Service[] = [
     tileImage: "", // ścieżka np. "/images/services/kodowanie-samochodowe-tile.jpg"
 
     heroTitle: "Kodowanie samochodowe",
-    heroImage: "", // ścieżka np. "/images/services/kodowanie-samochodowe-hero.jpg"
+    heroImage: "/images/kodowanie_main.jpeg", // ścieżka np. "/images/services/kodowanie-samochodowe-hero.jpg"
     heroSubtitle: "Odblokuj funkcje, które już znajdują się w Twoim samochodzie — BMW, MINI, VAG i Mercedes-Benz.",
     metaTitle: "Kodowanie samochodowe Kraków — BMW, MINI, VAG, Mercedes-Benz",
     metaDescription:
@@ -210,7 +210,7 @@ export const services: Service[] = [
     tileImage: "", // ścieżka np. "/images/services/multimedia-retrofit-tile.jpg"
 
     heroTitle: "Multimedia & Retrofit",
-    heroImage: "", // ścieżka np. "/images/services/multimedia-retrofit-hero.jpg"
+    heroImage: "/images/multimedia_main.jpeg", // ścieżka np. "/images/services/multimedia-retrofit-hero.jpg"
     heroSubtitle: "CarPlay, Android Auto, nowe ekrany i wirtualne kokpity — modernizacja multimediów Twojego auta.",
     metaTitle: "Multimedia i retrofit Kraków — CarPlay, ekrany, wirtualny kokpit",
     metaDescription:
