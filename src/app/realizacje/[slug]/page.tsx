@@ -8,7 +8,7 @@ import { CtaBand } from "@/components/services/CtaBand";
 import { BeforeAfter } from "@/components/projects/BeforeAfter";
 import { RelatedServices } from "@/components/services/RelatedServices";
 import { IconCamera } from "@/components/ui/icons";
-import { projects, getProjectBySlug } from "@/data/projects";
+import { projects, getProjectBySlug, getCoverAlt, getBeforeAlt, getAfterAlt } from "@/data/projects";
 import { getServiceBySlug } from "@/data/services";
 
 export function generateStaticParams() {
@@ -65,7 +65,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             {project.coverImage ? (
               <Image
                 src={project.coverImage}
-                alt={project.title}
+                alt={getCoverAlt(project)}
                 fill
                 sizes="(min-width: 1024px) 1100px, 100vw"
                 className="object-cover"
@@ -77,9 +77,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
           {project.images && project.images.length > 0 && (
             <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
-              {project.images.map((src) => (
-                <div key={src} className="relative aspect-[4/3] overflow-hidden rounded border border-ink-800 bg-ink-900">
-                  <Image src={src} alt={project.title} fill sizes="(min-width: 640px) 33vw, 50vw" className="object-cover" />
+              {project.images.map((image) => (
+                <div key={image.src} className="relative aspect-[4/3] overflow-hidden rounded border border-ink-800 bg-ink-900">
+                  <Image src={image.src} alt={image.alt} fill sizes="(min-width: 640px) 33vw, 50vw" className="object-cover" />
                 </div>
               ))}
             </div>
@@ -91,7 +91,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <section className="border-t border-ink-800 bg-ink-950 py-16">
           <Container>
             <h2 className="mb-6 font-display text-xl font-semibold text-paper-100">Przed / Po</h2>
-            <BeforeAfter beforeImage={project.beforeImage} afterImage={project.afterImage} />
+            <BeforeAfter
+              beforeImage={project.beforeImage}
+              beforeAlt={getBeforeAlt(project)}
+              afterImage={project.afterImage}
+              afterAlt={getAfterAlt(project)}
+            />
           </Container>
         </section>
       )}

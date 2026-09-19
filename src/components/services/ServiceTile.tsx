@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Service } from "@/types";
 import { cn } from "@/lib/cn";
+import { site } from "@/data/site";
 
 export function ServiceTile({ service, size = "md" }: { service: Service; size?: "md" | "lg" }) {
   const href = `/uslugi/${service.slug}`;
@@ -17,7 +18,7 @@ export function ServiceTile({ service, size = "md" }: { service: Service; size?:
       {service.tileImage ? (
         <Image
           src={service.tileImage}
-          alt={service.tileTitle}
+          alt={service.tileImageAlt || `${service.tileTitle} — ${site.name}`}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"

@@ -6,6 +6,7 @@ import { ProjectCard } from "@/components/projects/ProjectCard";
 import { IconCamera } from "@/components/ui/icons";
 import type { Project, ProjectCategory } from "@/types";
 import { site } from "@/data/site";
+import { getCoverAlt } from "@/data/projects";
 
 export function ProjectGrid({ projects, categories }: { projects: Project[]; categories: ProjectCategory[] }) {
   const [active, setActive] = useState<string>("Wszystkie");
@@ -56,7 +57,7 @@ export function ProjectGrid({ projects, categories }: { projects: Project[]; cat
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((project) => (
-          <ProjectCard key={project.slug} slug={project.slug} title={project.title} category={project.category} vehicle={project.vehicle} coverImage={project.coverImage} />
+          <ProjectCard key={project.slug} slug={project.slug} title={project.title} category={project.category} vehicle={project.vehicle} coverImage={project.coverImage} coverImageAlt={getCoverAlt(project)} />
         ))}
       </div>
     </div>

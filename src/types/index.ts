@@ -49,9 +49,11 @@ export type Service = {
   tileTitle: string;
   tileDescription: string; // 1 zdanie
   tileImage?: string; // ścieżka w /public, np. "/images/services/detailing/tile.jpg" — pokazuje się na kaflu (homepage + /uslugi)
+  tileImageAlt?: string; // jeśli puste, generowane automatycznie z tileTitle
 
   // --- treść podstrony (tylko gdy confirmed: true) ---
   heroImage?: string; // zdjęcie w tle pełnoszerokościowego hero na podstronie usługi
+  heroImageAlt?: string; // jeśli puste, generowane automatycznie z heroTitle
   heroTitle?: string;
   heroSubtitle?: string;
   metaTitle?: string;
@@ -83,6 +85,11 @@ export type ProjectCategory =
   | "Mycie detailingowe"
   | "Inne";
 
+export type ProjectImage = {
+  src: string;
+  alt: string; // opisz KONKRETNIE co widać na tym zdjęciu — patrz przykład w projects.ts
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -92,9 +99,12 @@ export type Project = {
   date?: string; // np. "2026-03"
   description?: string;
   coverImage?: string;
-  images?: string[];
+  coverImageAlt?: string; // jeśli puste, generowane automatycznie z tytułu (patrz getCoverAlt)
+  images?: ProjectImage[]; // każde zdjęcie ma WŁASNY, opisowy alt — nie jeden wspólny
   beforeImage?: string;
+  beforeImageAlt?: string; // jeśli puste, generowane automatycznie
   afterImage?: string;
+  afterImageAlt?: string; // jeśli puste, generowane automatycznie
 };
 
 export type ServiceOption = {

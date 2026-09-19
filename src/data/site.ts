@@ -42,7 +42,7 @@ export const site = {
   // - heroVideo: krótki film w panelu po prawej (autoplay, wyciszony, w pętli)
   // Puste = elegancki placeholder zamiast któregokolwiek z nich. Pliki wrzuć
   // do /public/images/ (zdjęcie) i /public/videos/ (film).
-  heroBackgroundImage: "",
+  heroBackgroundImage: "/images/hero.png",
   heroVideo: "/videos/hero_film.mp4",
   // Google tag (gtag.js) — współdzielony loader dla Google Analytics (GA4)
   // i Google Ads (śledzenie konwersji). Puste = NIC się nie ładuje i baner

@@ -8,9 +8,10 @@ type ProjectCardProps = {
   category: string;
   vehicle?: string;
   coverImage?: string;
+  coverImageAlt: string;
 };
 
-export function ProjectCard({ slug, title, category, vehicle, coverImage }: ProjectCardProps) {
+export function ProjectCard({ slug, title, category, vehicle, coverImage, coverImageAlt }: ProjectCardProps) {
   return (
     <Link
       href={`/realizacje/${slug}`}
@@ -19,7 +20,7 @@ export function ProjectCard({ slug, title, category, vehicle, coverImage }: Proj
       {coverImage ? (
         <Image
           src={coverImage}
-          alt={title}
+          alt={coverImageAlt}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"

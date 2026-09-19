@@ -3,6 +3,7 @@ import { ProjectCard } from "@/components/projects/ProjectCard";
 import { IconCamera } from "@/components/ui/icons";
 import type { Project } from "@/types";
 import { site } from "@/data/site";
+import { getCoverAlt } from "@/data/projects";
 
 export function ProjectPreview({ projects, allHref = "/realizacje" }: { projects: Project[]; allHref?: string }) {
   if (projects.length === 0) {
@@ -29,7 +30,7 @@ export function ProjectPreview({ projects, allHref = "/realizacje" }: { projects
     <div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
-          <ProjectCard key={project.slug} slug={project.slug} title={project.title} category={project.category} vehicle={project.vehicle} coverImage={project.coverImage} />
+          <ProjectCard key={project.slug} slug={project.slug} title={project.title} category={project.category} vehicle={project.vehicle} coverImage={project.coverImage} coverImageAlt={getCoverAlt(project)} />
         ))}
       </div>
       <div className="mt-6">
