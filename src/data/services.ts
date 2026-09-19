@@ -26,7 +26,7 @@ export const services: Service[] = [
 
     tileTitle: "Mycie detailingowe",
     tileDescription: "Mycie, pielęgnacja wnętrza i pranie tapicerki.",
-    tileImage: "", // ścieżka np. "/images/services/mycie-detailingowe-tile.jpg"
+    tileImage: "/images/mycie_main.jpeg", // ścieżka np. "/images/services/mycie-detailingowe-tile.jpg"
 
     heroTitle: "Mycie detailingowe",
     heroImage: "", // ścieżka np. "/images/services/mycie-detailingowe-hero.jpg"
@@ -94,7 +94,7 @@ export const services: Service[] = [
 
     tileTitle: "Kodowanie samochodowe",
     tileDescription: "BMW • MINI • VAG • Mercedes-Benz",
-    tileImage: "", // ścieżka np. "/images/services/kodowanie-samochodowe-tile.jpg"
+    tileImage: "/images/kodowanie_main.jpeg", // ścieżka np. "/images/services/kodowanie-samochodowe-tile.jpg"
 
     heroTitle: "Kodowanie samochodowe",
     heroImage: "", // ścieżka np. "/images/services/kodowanie-samochodowe-hero.jpg"
@@ -207,7 +207,7 @@ export const services: Service[] = [
 
     tileTitle: "Multimedia & Retrofit",
     tileDescription: "CarPlay • Android Auto • Retrofit • Wirtualne kokpity",
-    tileImage: "", // ścieżka np. "/images/services/multimedia-retrofit-tile.jpg"
+    tileImage: "/images/multimedia_main.jpeg", // ścieżka np. "/images/services/multimedia-retrofit-tile.jpg"
 
     heroTitle: "Multimedia & Retrofit",
     heroImage: "", // ścieżka np. "/images/services/multimedia-retrofit-hero.jpg"
