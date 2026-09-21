@@ -100,6 +100,9 @@ export async function updateRealizacja(id: string, formData: FormData): Promise<
     revalidatePath(`/admin/realizacje/${id}`);
     revalidatePath("/realizacje");
     revalidatePath(`/realizacje/${slug}`);
+    revalidatePath("/"); // podgląd realizacji na stronie głównej korzysta z tych samych danych
+    const serviceSlug = String(formData.get("serviceSlug") ?? "");
+    if (serviceSlug) revalidatePath(`/uslugi/${serviceSlug}`); // sekcja "Realizacje" na podstronie usługi
     return { ok: true };
   } catch (err) {
     return { ok: false, error: err instanceof Error ? err.message : "Nieznany błąd." };
@@ -131,6 +134,7 @@ export async function deleteRealizacja(id: string): Promise<ActionResult> {
 
     revalidatePath("/admin/realizacje");
     revalidatePath("/realizacje");
+    revalidatePath("/"); // podgląd realizacji na stronie głównej korzysta z tych samych danych
     return { ok: true };
   } catch (err) {
     return { ok: false, error: err instanceof Error ? err.message : "Nieznany błąd." };

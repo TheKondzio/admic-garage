@@ -55,50 +55,7 @@ export const projects: Project[] = [
   //   ],
   // },
 
-  {
-    slug: "kodowanie-vw-atlas",
-    title: "VW Atlas — kodowanie i wymiana akumulatora",
-    category: "Kodowanie samochodowe",
-    service: "kodowanie-samochodowe",
-    vehicle: "VW Atlas",
-    date: "2026-08",
-    description: "Kodowanie modułów oraz wymiana akumulatora w VW Atlas.",
-    coverImage: "/images/projects/kodowanie-VW-atlas/kodowanie.JPEG",
-    coverImageAlt: "VW Atlas — kodowanie modułów sterujących na stanowisku diagnostycznym",
-  },
-
-  {
-    slug: "wymiana-ekranu-q5",
-    title: "Audi Q5 — wymiana ekranu",
-    category: "Multimedia & Retrofit",
-    service: "multimedia-retrofit", // POPRAWIONE — było "multimedia i retrofit" (niepoprawny slug)
-    vehicle: "Audi Q5",
-    date: "2026-07",
-    description: "Wymiana fabrycznego ekranu na większy, z aktywacją Apple CarPlay i Android Auto.",
-    coverImage: "/images/projects/wymiana-ekranu-q5/glowne.JPEG",
-    coverImageAlt: "Audi Q5 — duży ekran wielofunkcyjny po wymianie",
-    beforeImage: "/images/projects/wymiana-ekranu-q5/przed.JPEG",
-    beforeImageAlt: "Audi Q5 — oryginalny, mniejszy ekran multimedialny przed wymianą",
-    afterImage: "/images/projects/wymiana-ekranu-q5/po.JPEG",
-    afterImageAlt: "Audi Q5 — nowy, większy ekran zamontowany w desce rozdzielczej",
-  },
-
-  {
-    slug: "kodowanie-carplay-a4",
-    title: "Audi A4 — kodowanie CarPlay i Android Auto",
-    category: "Kodowanie samochodowe",
-    service: "kodowanie-samochodowe",
-    vehicle: "Audi A4",
-    date: "2026-09",
-    description: "Aktywacja Apple CarPlay i Android Auto w seryjnej jednostce multimedialnej.",
-    coverImage: "/images/projects/kodowanie-carplay-a4/android.JPEG",
-    coverImageAlt: "Audi A4 — Android Auto uruchomiony na ekranie multimedialnym",
-    beforeImage: "/images/projects/kodowanie-carplay-a4/przed.JPEG",
-    beforeImageAlt: "Audi A4 — ekran multimedialny przed aktywacją CarPlay",
-    afterImage: "/images/projects/kodowanie-carplay-a4/po.JPEG",
-    afterImageAlt: "Audi A4 — CarPlay aktywowany na ekranie po kodowaniu",
-  },
-];
+ ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
