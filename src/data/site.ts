@@ -52,7 +52,7 @@ export const site = {
   // 2) gotowe — GoogleTag.tsx i CookieConsentBanner.tsx w src/components/cookies/
   //    same się aktywują i zaczną prosić o zgodę przed załadowaniem tagu.
   googleTag: {
-    ga4Id: "", // np. "G-XXXXXXXXXX" (Google Analytics 4)
-    adsId: "", // np. "AW-XXXXXXXXX" (Google Ads — śledzenie konwersji)
+    ga4Id: "G-LW7GK79VZX", // np. "G-XXXXXXXXXX" (Google Analytics 4)
+    adsId: "AW-18396266222", // np. "AW-XXXXXXXXX" (Google Ads — śledzenie konwersji)
   },
 } as const;

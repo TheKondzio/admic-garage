@@ -9,13 +9,13 @@ import { ProjectPreview } from "@/components/projects/ProjectPreview";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Reveal } from "@/components/ui/Reveal";
 import { getRelatedServices } from "@/data/services";
-import { getProjectsByService } from "@/data/projects";
+import { getPublishedProjectsByService } from "@/lib/supabase/publicProjects";
 import { site } from "@/data/site";
 import type { Service } from "@/types";
 
-export function ServicePageTemplate({ service }: { service: Service }) {
+export async function ServicePageTemplate({ service }: { service: Service }) {
   const related = getRelatedServices(service);
-  const projects = getProjectsByService(service.slug);
+  const projects = await getPublishedProjectsByService(service.slug);
 
   const faqJsonLd = service.faq
     ? {

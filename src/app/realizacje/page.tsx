@@ -4,7 +4,8 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
-import { projects, projectCategories } from "@/data/projects";
+import { projectCategories } from "@/data/projects";
+import { getPublishedProjects } from "@/lib/supabase/publicProjects";
 
 export const metadata: Metadata = {
   title: "Realizacje",
@@ -13,7 +14,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "/realizacje" },
 };
 
-export default function RealizacjePage() {
+// Strona jest teraz DYNAMICZNA — dane pochodzą z Supabase w czasie żądania,
+// więc realizacja dodana w panelu /admin pojawia się tu od razu, bez
+// ponownego builda/deployu.
+export const dynamic = "force-dynamic";
+
+export default async function RealizacjePage() {
+  const projects = await getPublishedProjects();
+
   return (
     <PageShell>
       <Breadcrumbs items={[{ label: "Strona główna", href: "/" }, { label: "Realizacje" }]} />

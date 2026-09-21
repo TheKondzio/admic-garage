@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/data/site";
 import { confirmedServices } from "@/data/services";
-import { projects } from "@/data/projects";
 import { localSeoPages } from "@/data/localSeo";
+import { getAllPublishedSlugs } from "@/lib/supabase/publicProjects";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -27,9 +27,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  // Realizacje — tylko te, które faktycznie istnieją w data/projects.ts.
-  const projectRoutes: MetadataRoute.Sitemap = projects.map((p) => ({
-    url: `${site.url}/realizacje/${p.slug}`,
+  // Realizacje — pobrane z bazy (tylko opublikowane), żeby nowe wpisy
+  // dodane w panelu trafiały do sitemapy bez ponownego builda.
+  const projectSlugs = await getAllPublishedSlugs();
+  const projectRoutes: MetadataRoute.Sitemap = projectSlugs.map((slug) => ({
+    url: `${site.url}/realizacje/${slug}`,
     lastModified: now,
     changeFrequency: "yearly",
     priority: 0.4,

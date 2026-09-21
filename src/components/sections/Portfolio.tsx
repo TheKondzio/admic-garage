@@ -1,10 +1,12 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectPreview } from "@/components/projects/ProjectPreview";
-import { projects } from "@/data/projects";
 import { Reveal } from "@/components/ui/Reveal";
+import { getPublishedProjects } from "@/lib/supabase/publicProjects";
 
-export function Portfolio() {
+export async function Portfolio() {
+  const projects = await getPublishedProjects();
+
   return (
     <section id="realizacje" className="bg-ink-950 py-20 sm:py-28">
       <Container>

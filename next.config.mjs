@@ -4,6 +4,18 @@ const nextConfig = {
   images: {
     // Podmień na docelowe źródło zdjęć (np. lokalne /public/images albo CDN).
     formats: ["image/avif", "image/webp"],
+    // Zdjęcia realizacji wgrywane przez panel /admin lądują w Supabase
+    // Storage (zewnętrzna domena) — next/image z założenia blokuje obce
+    // hosty, dopóki nie są tu wprost dopuszczone. Wzorzec z gwiazdką
+    // obejmuje dowolny projekt *.supabase.co, więc działa też, gdybyś
+    // kiedyś odtworzył projekt Supabase pod innym adresem.
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
   },
   // Usługi zostały przegrupowane (patrz src/data/services.ts) — stare adresy
   // przekierowujemy na nowe, żeby żaden wcześniej udostępniony/zaindeksowany

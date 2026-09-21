@@ -8,6 +8,11 @@ import { ServiceArea } from "@/components/sections/ServiceArea";
 import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
 
+// Strona główna pozostaje statyczna (szybka), ale co godzinę Next.js
+// odświeży ją w tle, żeby podgląd realizacji (teraz z Supabase) nie
+// wymagał pełnego redeployu po dodaniu nowej pozycji w panelu.
+export const revalidate = 3600;
+
 export default function Home() {
   return (
     <PageShell>

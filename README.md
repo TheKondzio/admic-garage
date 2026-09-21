@@ -18,6 +18,14 @@ Build produkcyjny pobiera fonty Inter i Sora z Google Fonts w trakcie
 kompilacji — potrzebny jest dostęp do internetu na maszynie budującej projekt
 (typowe dla Vercel/Netlify).
 
+## Panel administracyjny (/admin)
+
+Realizacjami można teraz zarządzać przez panel z logowaniem — bez edycji
+kodu. Wymaga jednorazowej konfiguracji Supabase (baza + auth + storage na
+zdjęcia). **Pełna instrukcja krok po kroku: [`README_PANEL.md`](./README_PANEL.md).**
+Bez tej konfiguracji reszta strony działa normalnie — po prostu `/realizacje`
+pokaże się jako puste, dopóki nie dodasz pierwszej pozycji przez panel.
+
 ## Mapa strony
 
 ```

@@ -7,6 +7,11 @@ import { ServiceComingSoon } from "@/components/services/ServiceComingSoon";
 import { services, getServiceBySlug } from "@/data/services";
 import { site } from "@/data/site";
 
+// Strona pozostaje statycznie generowana (szybka), ale co godzinę Next.js
+// odświeży ją w tle — dzięki temu sekcja "Realizacje związane z tą usługą"
+// (teraz z Supabase) nadąża za zmianami w panelu bez pełnego redeployu.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }

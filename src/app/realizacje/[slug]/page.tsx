@@ -8,15 +8,16 @@ import { CtaBand } from "@/components/services/CtaBand";
 import { BeforeAfter } from "@/components/projects/BeforeAfter";
 import { RelatedServices } from "@/components/services/RelatedServices";
 import { IconCamera } from "@/components/ui/icons";
-import { projects, getProjectBySlug, getCoverAlt, getBeforeAlt, getAfterAlt } from "@/data/projects";
+import { getCoverAlt, getBeforeAlt, getAfterAlt } from "@/data/projects";
 import { getServiceBySlug } from "@/data/services";
+import { getPublishedProjectBySlug } from "@/lib/supabase/publicProjects";
 
-export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
-}
+// Dynamiczna strona — dane z Supabase w czasie żądania. Nowe/edytowane
+// realizacje w panelu pojawiają się tu bez redeployu.
+export const dynamic = "force-dynamic";
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const project = await getPublishedProjectBySlug(params.slug);
   if (!project) return {};
   return {
     title: project.title,
@@ -25,8 +26,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: { params: { slug: string } }) {
+  const project = await getPublishedProjectBySlug(params.slug);
   if (!project) notFound();
 
   const relatedService = project.service ? getServiceBySlug(project.service) : undefined;

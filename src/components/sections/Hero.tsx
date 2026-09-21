@@ -57,7 +57,11 @@ export function Hero() {
         </div>
 
         {/* Panel po prawej — film w akcji (kodowanie / diagnostyka / detailing).
-            Ustaw site.heroVideo w src/data/site.ts, żeby pokazać realny materiał. */}
+            Ustaw site.heroVideo w src/data/site.ts, żeby pokazać realny materiał.
+            Karta z ocenami Google (GoogleReviewsCard) zdjęta stąd na Twoją prośbę —
+            kod (src/lib/googlePlaces.ts, src/components/sections/GoogleReviewsCard.tsx)
+            zostaje nietknięty. Żeby przywrócić: dodaj <GoogleReviewsCard /> pod
+            filmikiem, tak jak wcześniej. */}
         <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded border border-ink-800 bg-ink-900 shadow-card lg:aspect-[3/4]">
           {site.heroVideo ? (
             <video
