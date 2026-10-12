@@ -6,13 +6,14 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
 import { projectCategories } from "@/data/projects";
 import { getPublishedProjects } from "@/lib/supabase/publicProjects";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Realizacje",
   description:
     "Realizacje ADMIC GARAGE: kodowanie samochodowe, multimedia i retrofit, mycie detailingowe. Portfolio z podziałem na kategorie.",
-  alternates: { canonical: "/realizacje" },
-};
+  path: "/realizacje",
+});
 
 // Strona jest teraz DYNAMICZNA — dane pochodzą z Supabase w czasie żądania,
 // więc realizacja dodana w panelu /admin pojawia się tu od razu, bez
@@ -29,6 +30,7 @@ export default async function RealizacjePage() {
       <section className="bg-ink-950 py-16 sm:py-20">
         <Container>
           <SectionHeading
+            as="h1"
             eyebrow="Portfolio"
             title="Nasze realizacje"
             description="Każde auto traktujemy indywidualnie. Filtruj po kategorii, żeby zobaczyć konkretny rodzaj pracy."

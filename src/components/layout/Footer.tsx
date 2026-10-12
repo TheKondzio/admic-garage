@@ -6,6 +6,7 @@ import { localSeoPages } from "@/data/localSeo";
 import { site } from "@/data/site";
 import { MadeBy } from "@/components/layout/MadeBy";
 import { Logo } from "@/components/layout/Logo";
+import { CookieSettingsLink } from "@/components/cookies/CookieSettingsLink";
 
 export function Footer() {
   return (
@@ -33,7 +34,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wider text-paper-100">Lokalne SEO</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-paper-100">Obszar działania</p>
           <ul className="mt-4 space-y-2">
             {localSeoPages.map((p) => (
               <li key={p.slug}>
@@ -90,6 +91,7 @@ export function Footer() {
             <Link href="/polityka-cookies" className="hover:text-paper-200">
               Polityka cookies
             </Link>
+            <CookieSettingsLink className="hover:text-paper-200" />
           </div>
         </Container>
       </div>

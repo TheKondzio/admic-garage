@@ -6,13 +6,14 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceGrid } from "@/components/services/ServiceGrid";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Usługi",
   description:
     "Pełna oferta ADMIC GARAGE: kodowanie samochodowe (BMW, MINI, VAG, Mercedes-Benz), multimedia i retrofit, mycie detailingowe. Kraków i okolice, dojazd do klienta.",
-  alternates: { canonical: "/uslugi" },
-};
+  path: "/uslugi",
+});
 
 export default function UslugiPage() {
   const digital = services.filter((s) => s.group === "digital");
@@ -43,6 +44,7 @@ export default function UslugiPage() {
       <section className="bg-ink-950 py-16 sm:py-20">
         <Container>
           <SectionHeading
+            as="h1"
             eyebrow="Usługi ADMIC GARAGE"
             title="Od kodowania i multimediów po detailing i modernizację samochodu"
           />

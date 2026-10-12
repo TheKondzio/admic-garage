@@ -23,7 +23,9 @@ export async function getCurrentProfile(): Promise<UserProfile | null> {
     .eq("id", user.id)
     .single();
 
-  if (!profile) return null;
+  // Tylko znane role mają dostęp do panelu (np. konto z rolą "pending" — patrz
+  // supabase/zabezpieczenie-rejestracji.sql — nie wchodzi).
+  if (!profile || (profile.role !== "admin" && profile.role !== "editor")) return null;
 
   return profile as UserProfile;
 }

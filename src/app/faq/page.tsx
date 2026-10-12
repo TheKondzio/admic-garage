@@ -8,13 +8,14 @@ import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqItems } from "@/data/faq";
 import { confirmedServices } from "@/data/services";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "FAQ",
+export const metadata: Metadata = pageMetadata({
+  title: "FAQ — najczęstsze pytania",
   description:
     "Najczęstsze pytania o usługi ADMIC GARAGE: kodowanie samochodowe, multimedia, retrofit, mycie detailingowe, obszar działania i wycenę.",
-  alternates: { canonical: "/faq" },
-};
+  path: "/faq",
+});
 
 export default function FaqPage() {
   const jsonLd = {
@@ -34,7 +35,7 @@ export default function FaqPage() {
 
       <section className="bg-ink-950 py-16 sm:py-20">
         <Container className="max-w-3xl">
-          <SectionHeading eyebrow="Pytania i odpowiedzi" title="FAQ" align="center" />
+          <SectionHeading as="h1" eyebrow="Pytania i odpowiedzi" title="Najczęstsze pytania (FAQ)" align="center" />
           <div className="mt-10">
             <FaqAccordion items={faqItems} defaultOpenIndex={null} />
           </div>

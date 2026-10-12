@@ -4,7 +4,7 @@ export const processSteps: ProcessStep[] = [
   {
     step: 1,
     title: "Kontakt",
-    description: "Dzwonisz, piszesz na WhatsApp lub wysyłasz formularz — odpowiadamy zwykle w ciągu kilku godzin.",
+    description: "Dzwonisz, piszesz na WhatsApp lub wysyłasz formularz — wracamy do Ciebie z odpowiedzią.",
   },
   {
     step: 2,

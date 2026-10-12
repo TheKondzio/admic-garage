@@ -25,7 +25,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Czy kodowanie i przeróbki są bezpieczne i legalne?",
     answer:
-      "Tak. Aktywujemy wyłącznie funkcje fabrycznie wbudowane w auto przez producenta, a wszystkie montaże i konwersje wykonujemy profesjonalnym, certyfikowanym sprzętem. Procedury są odwracalne i nie wpływają negatywnie na gwarancję ani działanie pojazdu.",
+      "Kodujemy funkcje, które producent wbudował w oprogramowanie auta, a montaże i konwersje wykonujemy profesjonalnym sprzętem. Zakres i bezpieczeństwo oceniamy indywidualnie dla Twojego modelu, rocznika i wyposażenia. Jeśli auto jest na gwarancji, omów to z nami przed zleceniem: nie gwarantujemy, że zmiany nie wpłyną na jej warunki.",
   },
   {
     question: "Co jeśli moje auto nie obsługuje aktywacji CarPlay przez kodowanie?",

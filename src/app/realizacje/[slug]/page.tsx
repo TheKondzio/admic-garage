@@ -11,6 +11,7 @@ import { IconCamera } from "@/components/ui/icons";
 import { getCoverAlt, getBeforeAlt, getAfterAlt } from "@/data/projects";
 import { getServiceBySlug } from "@/data/services";
 import { getPublishedProjectBySlug } from "@/lib/supabase/publicProjects";
+import { pageMetadata } from "@/lib/seo";
 
 // Dynamiczna strona — dane z Supabase w czasie żądania. Nowe/edytowane
 // realizacje w panelu pojawiają się tu bez redeployu.
@@ -19,11 +20,13 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const project = await getPublishedProjectBySlug(params.slug);
   if (!project) return {};
-  return {
+  return pageMetadata({
     title: project.title,
     description: project.description ?? `Realizacja ADMIC GARAGE: ${project.title}.`,
-    alternates: { canonical: `/realizacje/${project.slug}` },
-  };
+    path: `/realizacje/${project.slug}`,
+    // Okładka realizacji jako obraz udostępniania (jeśli jest) — inaczej domyślny og-image.
+    images: project.coverImage ? [{ url: project.coverImage, alt: getCoverAlt(project) }] : undefined,
+  });
 }
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {

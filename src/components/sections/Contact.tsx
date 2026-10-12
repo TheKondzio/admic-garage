@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { IconPhone, IconWhatsapp, IconMail } from "@/components/ui/icons";
 import { serviceOptions } from "@/data/services";
 import { site } from "@/data/site";
+import { trackEvent } from "@/lib/tracking";
 
 type FormState = {
   name: string;
@@ -35,12 +36,13 @@ function validate(form: FormState, consent: boolean) {
   return { errors, consentError: !consent ? "Zaznacz zgodę, żeby wysłać wiadomość." : undefined };
 }
 
-export function Contact() {
+export function Contact({ headingAs }: { headingAs?: "h1" | "h2" } = {}) {
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [consent, setConsent] = useState(false);
   const [consentError, setConsentError] = useState<string | undefined>();
   const [status, setStatus] = useState<Status>("idle");
+  const [trap, setTrap] = useState(""); // honeypot — człowiek go nie widzi
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -58,10 +60,11 @@ export function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, _gotcha: trap, page: "/kontakt" }),
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
+      trackEvent("generate_lead", { form: "kontakt" }); // tylko po odpowiedzi 2xx, bez danych osobowych
       setForm(initialState);
       setConsent(false);
     } catch {
@@ -74,13 +77,24 @@ export function Contact() {
     <section id="kontakt" className="bg-ink-900/40 py-20 sm:py-28">
       <Container>
         <SectionHeading
+          as={headingAs}
           eyebrow="Kontakt"
           title="Zapytaj o wycenę"
-          description="Wypełnij formularz albo skontaktuj się bezpośrednio — odpisujemy zwykle w ciągu kilku godzin."
+          description="Wypełnij formularz albo skontaktuj się bezpośrednio — odpowiemy na Twoje zapytanie."
         />
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1.3fr_1fr]">
-          <form onSubmit={handleSubmit} noValidate className="rounded border border-ink-800 bg-ink-900 p-6 sm:p-8">
+          <form onSubmit={handleSubmit} noValidate className="relative rounded border border-ink-800 bg-ink-900 p-6 sm:p-8">
+            <input
+            type="text"
+            name="_gotcha"
+            value={trap}
+            onChange={(e) => setTrap(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute -left-[9999px] h-0 w-0 opacity-0"
+          />
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Imię" error={errors.name}>
                 <input

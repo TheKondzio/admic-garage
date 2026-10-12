@@ -4,18 +4,20 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { LegalH2, LegalP, LegalUl, LegalLi, LegalTable, ToDo } from "@/components/legal/LegalPrimitives";
 import { site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Polityka cookies",
-  description: "Informacje o plikach cookies wykorzystywanych w serwisie ADMIC GARAGE.",
-  alternates: { canonical: "/polityka-cookies" },
-  robots: { index: true, follow: true },
-};
+  description:
+    "Informacje o plikach cookies wykorzystywanych w serwisie ADMIC GARAGE (Google Analytics 4 i Google Ads — wyłącznie za zgodą) oraz o zmianie zgody.",
+  path: "/polityka-cookies",
+});
 
-// Audyt kodu źródłowego potwierdza: serwis nie ustawia obecnie żadnych
-// cookies (brak analytics, marketingu, logowania, koszyka). Treść poniżej
-// odzwierciedla ten rzeczywisty stan, zamiast opisywać cookies, których
-// strona nie posiada.
+// Treść odpowiada stanowi faktycznemu: w site.ts są aktywne identyfikatory
+// Google Analytics 4 i Google Ads, a tagi Google ładują się WYŁĄCZNIE po zgodzie
+// z banera (components/cookies/). Zgodę można zmienić linkiem „Ustawienia cookies”
+// w stopce. Nazwy i czasy życia cookies pochodzą z oficjalnego zestawienia Google
+// (https://business.safety.google/adscookies/) — nie są zgadywane.
 export default function PolitykaCookies() {
   return (
     <PageShell>
@@ -39,60 +41,71 @@ export default function PolitykaCookies() {
 
           <LegalH2>2. Jakie cookies wykorzystuje serwis {site.url}</LegalH2>
           <LegalP>
-            <strong className="text-paper-100">
-              Serwis, w swoim obecnym kształcie, nie wykorzystuje żadnych plików cookies
-            </strong>{" "}
-            — ani niezbędnych, ani analitycznych, funkcjonalnych czy marketingowych. Potwierdza to
-            pełny audyt kodu źródłowego strony: brak logowania, sesji, koszyka, narzędzi
-            analitycznych oraz jakichkolwiek skryptów podmiotów trzecich, które ustawiałyby
-            cookies.
+            <strong className="text-paper-100">Bez Twojej zgody serwis nie ustawia cookies
+            analitycznych ani marketingowych</strong> i nie wysyła żadnych żądań do serwerów Google.
+            Zgodę (analityczną i/lub marketingową) wyrażasz w banerze przy pierwszej wizycie. Zapisujemy
+            ją w pamięci przeglądarki (localStorage), a nie w cookie.
+          </LegalP>
+          <LegalP>
+            Po wyrażeniu zgody ładujemy znacznik Google (gtag.js), który — zależnie od wybranych
+            kategorii — może ustawiać poniższe cookies. Nazwy i czasy życia podajemy za oficjalnym
+            zestawieniem Google ({" "}
+            <a
+              href="https://business.safety.google/adscookies/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent-light hover:text-accent"
+            >
+              business.safety.google/adscookies
+            </a>
+            ); Google może je zmieniać.
           </LegalP>
           <LegalTable
             headers={["Nazwa", "Dostawca", "Cel", "Rodzaj", "Okres przechowywania"]}
-            rows={[["—", "—", "Brak cookies do wykazania na dzień publikacji", "—", "—"]]}
+            rows={[
+              ["_ga", "Google", "Statystyki odwiedzin (Google Analytics 4) — rozróżnianie użytkowników", "Analityczne (za zgodą)", "2 lata"],
+              ["_ga_<identyfikator>", "Google", "Statystyki odwiedzin (Google Analytics 4) — stan sesji", "Analityczne (za zgodą)", "2 lata"],
+              ["_gcl_au", "Google", "Pomiar skuteczności reklam (Google Ads)", "Marketingowe (za zgodą)", "90 dni"],
+              ["_gcl_aw", "Google", "Pomiar skuteczności reklam — zapamiętanie kliknięcia w reklamę (gdy adres zawiera identyfikator kliknięcia)", "Marketingowe (za zgodą)", "90 dni"],
+            ]}
           />
-
-          <LegalH2>3. Mechanizm zgody jest już przygotowany</LegalH2>
           <LegalP>
-            Serwis ma wbudowany, gotowy do aktywacji mechanizm banera zgody na cookies wraz
-            z obsługą Google Analytics (GA4) i Google Ads. Dopóki administrator nie skonfiguruje
-            identyfikatora GA4 i/lub Google Ads, baner pozostaje ukryty, a żaden skrypt Google nie
-            jest ładowany — zgodnie ze stanem opisanym w sekcji 2 powyżej. W momencie aktywacji:
+            Google może w związku z tymi narzędziami ustawiać również inne cookies (np. należące do
+            domen google.com / doubleclick.net, takie jak IDE — wg Google 13 miesięcy w EOG). Pełny,
+            aktualny wykaz prowadzi Google pod adresem podanym wyżej.
           </LegalP>
-          <LegalUl>
-            <LegalLi>baner zgody pojawi się automatycznie przy pierwszej wizycie,</LegalLi>
-            <LegalLi>skrypt Google (gtag.js) załaduje się dopiero po wyrażeniu odpowiedniej zgody (analitycznej dla GA4, marketingowej dla Google Ads) — nie wcześniej,</LegalLi>
-            <LegalLi>użytkownik będzie mógł w każdej chwili zmienić swoją decyzję,</LegalLi>
-            <LegalLi>niniejsza polityka zostanie zaktualizowana o pełną tabelę konkretnych cookies ustawianych przez Google (nazwa, cel, okres przechowywania) — dokładna lista zależy od zachowania samego narzędzia Google i zostanie uzupełniona po aktywacji.</LegalLi>
-          </LegalUl>
           <LegalP>
-            Aktywacja: <ToDo>data uruchomienia + identyfikatory GA4/Google Ads</ToDo>.
+            Cookies niezbędne: serwis nie ustawia własnych cookies niezbędnych do działania
+            publicznej części strony. Panel administracyjny (/admin, dla zalogowanych redaktorów)
+            używa cookies sesji logowania.
           </LegalP>
 
-          <LegalH2>4. Zgoda użytkownika</LegalH2>
+          <LegalH2>3. Zgoda użytkownika i jej zmiana</LegalH2>
           <LegalP>
-            Ponieważ serwis nie ustawia obecnie żadnych cookies wymagających zgody, na stronie nie
-            jest wyświetlany baner z prośbą o zgodę na cookies. Zgodnie z ustawą Prawo
-            telekomunikacyjne oraz RODO, obowiązek uzyskania zgody dotyczy cookies innych niż
-            niezbędne do świadczenia usługi — dopóki takie nie występują, żądanie zgody byłoby
-            bezprzedmiotowe.
+            Przy pierwszej wizycie wyświetlamy baner z trzema równorzędnymi opcjami: zaakceptowanie
+            wszystkich cookies, odrzucenie niekoniecznych albo dostosowanie preferencji. Kategorie
+            opcjonalne są domyślnie wyłączone. Brak zgody nie ogranicza korzystania z serwisu.
+          </LegalP>
+          <LegalP>
+            Swoją decyzję możesz w każdej chwili zmienić lub wycofać, klikając „Ustawienia cookies”
+            w stopce serwisu. Po wycofaniu zgody usuń także istniejące cookies w ustawieniach
+            przeglądarki (patrz sekcja 4) — wygasają one samoczynnie po okresach podanych w tabeli.
           </LegalP>
 
-          <LegalH2>5. Ustawienia przeglądarki</LegalH2>
+          <LegalH2>4. Ustawienia przeglądarki</LegalH2>
           <LegalP>
-            Mimo że serwis obecnie nie korzysta z cookies, użytkownik może w dowolnym momencie
-            samodzielnie zarządzać ustawieniami cookies w swojej przeglądarce internetowej —
-            zablokować ich zapisywanie, usunąć istniejące pliki cookies lub ustawić powiadomienia
-            przy próbie ich zapisania. Instrukcje zarządzania cookies dostępne są w
-            ustawieniach/pomocy każdej popularnej przeglądarki (Chrome, Firefox, Safari, Edge).
+            Niezależnie od banera możesz samodzielnie zarządzać cookies w ustawieniach przeglądarki
+            — zablokować ich zapisywanie, usunąć istniejące pliki lub ustawić powiadomienia przy
+            próbie ich zapisania. Instrukcje znajdziesz w pomocy przeglądarki (Chrome, Firefox,
+            Safari, Edge).
           </LegalP>
 
-          <LegalH2>6. Kontakt</LegalH2>
+          <LegalH2>5. Kontakt</LegalH2>
           <LegalP>
             Pytania dotyczące niniejszej polityki cookies prosimy kierować na adres: {site.email}.
           </LegalP>
           <LegalP>
-            Data ostatniej aktualizacji: <ToDo>data publikacji</ToDo>
+            Data ostatniej aktualizacji: <ToDo>data wdrożenia tej wersji</ToDo>
           </LegalP>
         </Container>
       </section>

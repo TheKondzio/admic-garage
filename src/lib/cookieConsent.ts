@@ -46,3 +46,12 @@ export function storeConsent(categories: Omit<ConsentCategories, "necessary">): 
 }
 
 export const CONSENT_EVENT = "admic-consent-change";
+
+// Zdarzenie otwierające ponownie panel ustawień cookies (link „Ustawienia cookies”
+// w stopce) — pozwala zmienić albo wycofać zgodę po jej wcześniejszym udzieleniu.
+export const OPEN_SETTINGS_EVENT = "admic-open-cookie-settings";
+
+export function openCookieSettings() {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new Event(OPEN_SETTINGS_EVENT));
+}

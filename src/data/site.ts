@@ -54,5 +54,14 @@ export const site = {
   googleTag: {
     ga4Id: "G-LW7GK79VZX", // np. "G-XXXXXXXXXX" (Google Analytics 4)
     adsId: "AW-18396266222", // np. "AW-XXXXXXXXX" (Google Ads — śledzenie konwersji)
+    // Etykiety konwersji Google Ads dla landing page /carplay-i-kodowanie-bmw.
+    // Format: "AW-18396266222/AbCdEfGhIjK" (cały ciąg `send_to` z Google Ads →
+    // Cele → Konwersje → wybrana konwersja → Konfiguracja tagu). Puste = zdarzenie
+    // konwersji NIE jest wysyłane (nie wpisuj tu zgadniętych wartości).
+    conversions: {
+      lead_bmw: "", // wysłanie formularza (/carplay-i-kodowanie-bmw)
+      phone: "", // kliknięcie numeru telefonu
+      whatsapp: "", // kliknięcie WhatsApp
+    } as Record<string, string>,
   },
 } as const;

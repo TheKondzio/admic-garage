@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
@@ -195,6 +196,21 @@ export async function ServicePageTemplate({ service }: { service: Service }) {
                       <FaqAccordion items={service.faq} />
                     </div>
                   </div>
+                </Reveal>
+              )}
+
+              {service.landing && (
+                <Reveal>
+                  <Link
+                    href={service.landing.href}
+                    className="block rounded border border-ink-800 bg-ink-900 p-6 transition-colors hover:border-accent/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  >
+                    <p className="font-display text-lg font-semibold text-paper-100">{service.landing.title}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-paper-400">{service.landing.description}</p>
+                    <span className="mt-3 inline-block text-sm font-semibold text-accent-light">
+                      Zobacz szczegóły <span aria-hidden="true">→</span>
+                    </span>
+                  </Link>
                 </Reveal>
               )}
 

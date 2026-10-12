@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ServicePageTemplate } from "@/components/services/ServicePageTemplate";
 import { ServiceComingSoon } from "@/components/services/ServiceComingSoon";
 import { services, getServiceBySlug } from "@/data/services";
-import { site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
 // Strona pozostaje statycznie generowana (szybka), ale co godzinę Next.js
 // odświeży ją w tle — dzięki temu sekcja "Realizacje związane z tą usługą"
@@ -21,24 +21,19 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!service) return {};
 
   if (!service.confirmed) {
-    return {
+    return pageMetadata({
       title: service.tileTitle,
       description: "Usługa w trakcie potwierdzania oferty.",
-      alternates: { canonical: `/uslugi/${service.slug}` },
-      robots: { index: false, follow: true },
-    };
+      path: `/uslugi/${service.slug}`,
+      noindex: true,
+    });
   }
 
-  return {
+  return pageMetadata({
     title: service.metaTitle ?? service.tileTitle,
     description: service.metaDescription ?? service.tileDescription,
-    alternates: { canonical: `/uslugi/${service.slug}` },
-    openGraph: {
-      title: service.metaTitle ?? service.tileTitle,
-      description: service.metaDescription ?? service.tileDescription,
-      url: `${site.url}/uslugi/${service.slug}`,
-    },
-  };
+    path: `/uslugi/${service.slug}`,
+  });
 }
 
 export default function ServicePage({ params }: { params: { slug: string } }) {

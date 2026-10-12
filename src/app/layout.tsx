@@ -12,7 +12,7 @@ const sora = Sora({ subsets: ["latin", "latin-ext"], variable: "--font-sora", we
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "ADMIC GARAGE — Kodowanie samochodowe, multimedia, detailing | Kraków",
+    default: "Kodowanie samochodowe i detailing Kraków | ADMIC GARAGE",
     template: "%s | ADMIC GARAGE",
   },
   description:
@@ -37,15 +37,16 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     url: site.url,
     siteName: site.name,
-    title: "ADMIC GARAGE — Kodowanie samochodowe, multimedia, detailing | Kraków",
+    title: "Kodowanie samochodowe i detailing Kraków | ADMIC GARAGE",
     description:
       "Kodowanie samochodowe (BMW, MINI, VAG, Mercedes-Benz), CarPlay, retrofit i mycie detailingowe z dojazdem do klienta. Kraków i okolice, także Wadowice i Kalwaria Zebrzydowska.",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "ADMIC GARAGE — kodowanie samochodowe, multimedia, detailing" }], // TODO: dodać docelowy obraz 1200x630
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "ADMIC GARAGE — kodowanie samochodowe, multimedia, detailing" }], // plik: public/og-image.jpg
   },
   twitter: {
     card: "summary_large_image",
-    title: "ADMIC GARAGE — Kodowanie samochodowe, multimedia, detailing",
+    title: "Kodowanie samochodowe i detailing Kraków | ADMIC GARAGE",
     description: "Kodowanie samochodowe, CarPlay, retrofit i mycie detailingowe z dojazdem do klienta.",
+    images: ["/og-image.jpg"],
   },
   robots: { index: true, follow: true },
   // TODO: po podłączeniu Google Search Console wklej kod weryfikacyjny, np.:

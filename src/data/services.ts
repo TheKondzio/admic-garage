@@ -31,7 +31,7 @@ export const services: Service[] = [
     heroTitle: "Mycie detailingowe",
     heroImage: "", // ścieżka np. "/images/services/mycie-detailingowe-hero.jpg"
     heroSubtitle: "Mycie detailingowe, kompleksowe czyszczenie wnętrza oraz pranie tapicerki.",
-    metaTitle: "Mycie detailingowe Kraków — mycie, wnętrze, pranie tapicerki",
+    metaTitle: "Mycie detailingowe Kraków — wnętrze i tapicerka",
     metaDescription:
       "Mycie detailingowe w Krakowie i okolicach: mycie zewnętrzne, czyszczenie wnętrza, pranie tapicerki, pielęgnacja skóry, czyszczenie felg. Dojazd do klienta.",
 
@@ -99,7 +99,7 @@ export const services: Service[] = [
     heroTitle: "Kodowanie samochodowe",
     heroImage: "", // ścieżka np. "/images/services/kodowanie-samochodowe-hero.jpg"
     heroSubtitle: "Odblokuj funkcje, które już znajdują się w Twoim samochodzie — BMW, MINI, VAG i Mercedes-Benz.",
-    metaTitle: "Kodowanie samochodowe Kraków — BMW, MINI, VAG, Mercedes-Benz",
+    metaTitle: "Kodowanie samochodowe Kraków — BMW, MINI, VAG",
     metaDescription:
       "Kodowanie samochodowe w Krakowie i okolicach: BMW, MINI, VAG i Mercedes-Benz. Ukryte funkcje, CarPlay, diagnostyka. Sprawdź możliwości swojego auta.",
 
@@ -181,7 +181,7 @@ export const services: Service[] = [
       {
         question: "Czy kodowanie jest bezpieczne i legalne?",
         answer:
-          "Tak. Aktywujemy wyłącznie funkcje fabrycznie wbudowane w auto przez producenta, korzystając z profesjonalnego sprzętu. Procedury są odwracalne i nie wpływają negatywnie na gwarancję ani działanie pojazdu.",
+          "Aktywujemy funkcje, które producent wbudował w oprogramowanie auta, i robimy to profesjonalnym sprzętem. Zakres zależy od modelu, rocznika i wyposażenia — przed realizacją sprawdzamy, co jest możliwe w Twoim aucie, i nie obiecujemy zmian, których nie da się potwierdzić. Jeśli auto jest na gwarancji, omów to z nami przed zleceniem: nie gwarantujemy, że zmiany nie wpłyną na jej warunki.",
       },
       {
         question: "Czy muszę przyjechać do warsztatu?",
@@ -195,6 +195,11 @@ export const services: Service[] = [
       },
     ],
     relatedSlugs: ["multimedia-retrofit", "mycie-detailingowe"],
+    landing: {
+      href: "/carplay-i-kodowanie-bmw",
+      title: "Masz BMW? Aktywacja CarPlay i zdalne kodowanie BMW",
+      description: "Sprawdź, jak wygląda sprawdzenie kompatybilności Twojego BMW i zdalne kodowanie — krok po kroku, z formularzem.",
+    },
   },
 
   // =========================== MULTIMEDIA & RETROFIT =========================
@@ -212,7 +217,7 @@ export const services: Service[] = [
     heroTitle: "Multimedia & Retrofit",
     heroImage: "", // ścieżka np. "/images/services/multimedia-retrofit-hero.jpg"
     heroSubtitle: "CarPlay, Android Auto, nowe ekrany i wirtualne kokpity — modernizacja multimediów Twojego auta.",
-    metaTitle: "Multimedia i retrofit Kraków — CarPlay, ekrany, wirtualny kokpit",
+    metaTitle: "Multimedia i retrofit Kraków — CarPlay i ekrany",
     metaDescription:
       "Montaż CarPlay/Android Auto, wymiana ekranu multimedialnego, wirtualny kokpit i retrofit. Kraków i okolice, dojazd do klienta.",
 
@@ -296,6 +301,11 @@ export const services: Service[] = [
       },
     ],
     relatedSlugs: ["kodowanie-samochodowe", "mycie-detailingowe"],
+    landing: {
+      href: "/carplay-i-kodowanie-bmw",
+      title: "Masz BMW? Aktywacja CarPlay i zdalne kodowanie BMW",
+      description: "Sprawdź, jak wygląda sprawdzenie kompatybilności Twojego BMW i zdalne kodowanie — krok po kroku, z formularzem.",
+    },
   },
 ];
 

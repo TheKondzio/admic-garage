@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PageShell } from "@/components/layout/PageShell";
 import { LocalSeoPageTemplate } from "@/components/local-seo/LocalSeoPageTemplate";
 import { localSeoPages, getLocalSeoPageBySlug } from "@/data/localSeo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return localSeoPages.map((p) => ({ slug: p.slug }));
@@ -12,15 +13,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const page = getLocalSeoPageBySlug(params.slug);
   if (!page) return {};
 
-  return {
+  return pageMetadata({
     title: page.metaTitle,
     description: page.metaDescription,
-    alternates: { canonical: `/${page.slug}` },
-    openGraph: {
-      title: page.metaTitle,
-      description: page.metaDescription,
-    },
-  };
+    path: `/${page.slug}`,
+  });
 }
 
 // Ten segment [slug] łapie WYŁĄCZNIE nierozpoznane top-level adresy — Next.js

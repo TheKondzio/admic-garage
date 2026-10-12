@@ -5,11 +5,13 @@ export function SectionHeading({
   title,
   description,
   align = "left",
+  as: Tag = "h2",
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   align?: "left" | "center";
+  as?: "h1" | "h2"; // na podstronach bez własnego H1 nagłówek sekcji głównej jest H1
 }) {
   return (
     <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center")}>
@@ -18,9 +20,9 @@ export function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2 className="font-display text-3xl font-semibold text-paper-100 sm:text-4xl">
+      <Tag className="font-display text-3xl font-semibold text-paper-100 sm:text-4xl">
         {title}
-      </h2>
+      </Tag>
       {description && (
         <p className="mt-4 text-base leading-relaxed text-paper-300">{description}</p>
       )}

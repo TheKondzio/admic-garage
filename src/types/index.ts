@@ -71,6 +71,8 @@ export type Service = {
   priceNote?: string; // zawsze "wycena indywidualna" — nigdy zmyślona cena
   faq?: FaqItem[]; // FAQ specyficzne dla tej usługi
   relatedSlugs?: string[]; // powiązane usługi (max 3 pokazywane)
+  // Opcjonalny link do dedykowanego landing page (np. z reklam) — pokazuje się w treści podstrony.
+  landing?: { href: string; title: string; description: string };
 };
 
 // ============================================================================

@@ -32,21 +32,21 @@ export const localSeoPages: LocalSeoPage[] = [
     areaStatus: "priorytet",
     metaTitle: "Detailing i kodowanie samochodowe Kraków",
     metaDescription:
-      "Kodowanie samochodowe i mycie detailingowe w Krakowie — dojazd do klienta, pracujemy tu na co dzień. Sprawdź ofertę ADMIC GARAGE.",
+      "Kodowanie samochodowe i mycie detailingowe w Krakowie — dojazd do klienta. Sprawdź ofertę ADMIC GARAGE.",
     heroTitle: "Detailing i kodowanie samochodowe w Krakowie",
-    heroSubtitle: "Kraków i okolice to nasz priorytet — pracujemy tu na co dzień, z pełną elastycznością terminów.",
+    heroSubtitle: "Kraków i okolice to nasz priorytet — obsługujemy tu klientów z dojazdem pod wskazany adres.",
     intro: [
-      "Jeśli szukasz kodowania samochodowego lub mycia detailingowego w Krakowie, jesteśmy tu praktycznie codziennie — nie musisz czekać na „wolny termin dojazdu”, jak w przypadku dalszych lokalizacji.",
+      "Jeśli szukasz kodowania samochodowego lub mycia detailingowego w Krakowie, to nasz główny obszar działania — obsługujemy tu klientów z dojazdem pod wskazany adres.",
       "Obie usługi wykonujemy z dojazdem — przyjeżdżamy pod Twój dom, biuro lub parking w dogodnym dla Ciebie miejscu na terenie Krakowa i okolic.",
     ],
     faq: [
       {
         question: "Jak szybko możecie dojechać do mnie w Krakowie?",
-        answer: "Kraków to nasz główny obszar działania — zwykle udaje się znaleźć termin w ciągu kilku dni, czasem szybciej. Zadzwoń, sprawdzimy najbliższy wolny termin.",
+        answer: "Kraków to nasz główny obszar działania. Termin ustalamy indywidualnie — zadzwoń lub napisz, a sprawdzimy najbliższy wolny termin.",
       },
       {
         question: "Czy dojazd na terenie Krakowa jest dodatkowo płatny?",
-        answer: "W obrębie Krakowa i najbliższych okolic dojazd jest standardowym elementem naszej usługi — dokładne warunki potwierdzamy przy ustalaniu wyceny.",
+        answer: "Warunki dojazdu, w tym ewentualny koszt, potwierdzamy przy ustalaniu wyceny — zależą od lokalizacji i zakresu usługi.",
       },
       {
         question: "Czy mogę zamówić kodowanie i detailing w jednej wizycie?",
@@ -60,17 +60,17 @@ export const localSeoPages: LocalSeoPage[] = [
     areaStatus: "regularnie",
     metaTitle: "Detailing i kodowanie samochodowe Wadowice",
     metaDescription:
-      "Kodowanie samochodowe i mycie detailingowe w Wadowicach — dojeżdżamy regularnie, blisko naszej bazy w Kalwarii Zebrzydowskiej.",
+      "Kodowanie samochodowe i mycie detailingowe w Wadowicach — dojazd do klienta, blisko naszej bazy w Kalwarii Zebrzydowskiej.",
     heroTitle: "Detailing i kodowanie samochodowe w Wadowicach",
     heroSubtitle: "Wadowice leżą blisko naszej bazy w Kalwarii Zebrzydowskiej — dojeżdżamy tu regularnie.",
     intro: [
-      "Wadowice to jedna z lokalizacji, w których bywamy najczęściej — dzięki bliskości naszej bazy w Kalwarii Zebrzydowskiej dojazd zajmuje nam dosłownie chwilę.",
+      "Wadowice leżą blisko naszej bazy w Kalwarii Zebrzydowskiej, więc dojazd jest krótki.",
       "Oferujemy zarówno kodowanie samochodowe (aktywacja ukrytych funkcji, CarPlay, diagnostyka), jak i mycie detailingowe z praniem tapicerki — z dojazdem pod wskazany adres.",
     ],
     faq: [
       {
         question: "Czy w Wadowicach dojazd jest szybszy niż w dalszych lokalizacjach?",
-        answer: "Tak — Wadowice sąsiadują z naszą bazą w Kalwarii Zebrzydowskiej, więc zwykle łatwiej dopasować termin niż przy dalszych dojazdach.",
+        answer: "Wadowice sąsiadują z naszą bazą w Kalwarii Zebrzydowskiej, więc dojazd jest krótszy niż do dalszych lokalizacji. Termin ustalamy indywidualnie.",
       },
       {
         question: "Jakie marki obsługujecie w ramach kodowania?",
@@ -88,17 +88,17 @@ export const localSeoPages: LocalSeoPage[] = [
     areaStatus: "siedziba",
     metaTitle: "Detailing i kodowanie samochodowe Kalwaria Zebrzydowska",
     metaDescription:
-      "Kodowanie samochodowe i mycie detailingowe w Kalwarii Zebrzydowskiej — tu mieści się nasza baza. Krótki czas oczekiwania na termin.",
+      "Kodowanie samochodowe i mycie detailingowe w Kalwarii Zebrzydowskiej — tu mieści się nasza baza. Dojazd pod wskazany adres.",
     heroTitle: "Detailing i kodowanie samochodowe w Kalwarii Zebrzydowskiej",
     heroSubtitle: "Kalwaria Zebrzydowska to nasza baza — tu masz nas najbliżej.",
     intro: [
-      "Kalwaria Zebrzydowska to miejsce, z którego wyruszamy na każdy dojazd — jeśli mieszkasz w okolicy, czas oczekiwania na termin jest zwykle najkrótszy z całego obszaru działania.",
+      "Kalwaria Zebrzydowska to miejsce, z którego wyruszamy na każdy dojazd — jeśli mieszkasz w okolicy, dojazd do Ciebie jest najkrótszy.",
       "Wykonujemy tu zarówno kodowanie samochodowe, jak i mycie detailingowe — z dojazdem pod wskazany adres.",
     ],
     faq: [
       {
-        question: "Czy w Kalwarii Zebrzydowskiej można umówić się szybciej niż w innych miastach?",
-        answer: "Zazwyczaj tak — to nasza baza, więc logistycznie najłatwiej dopasować tu wolny termin.",
+        question: "Czy dojazd do Kalwarii Zebrzydowskiej jest krótszy niż do innych miejscowości?",
+        answer: "Tak — to nasza baza, więc dojazd jest tu najkrótszy. Termin i tak ustalamy indywidualnie.",
       },
       {
         question: "Czy przyjmujecie klientów stacjonarnie w Kalwarii Zebrzydowskiej?",

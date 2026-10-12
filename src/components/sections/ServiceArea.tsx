@@ -28,12 +28,13 @@ const areas = [
   },
 ];
 
-export function ServiceArea() {
+export function ServiceArea({ headingAs }: { headingAs?: "h1" | "h2" } = {}) {
   return (
     <section id="obszar" className="bg-ink-900/40 py-20 sm:py-28">
       <Container>
         <Reveal>
           <SectionHeading
+            as={headingAs}
             eyebrow="Zasięg działania"
             title="Dojeżdżamy do Ciebie"
             description={`Kraków i okolice to nasz priorytet — pracujemy tam na co dzień. Dojeżdżamy też regularnie do Wadowic, a nasza baza to ${site.base.city}. ${site.serviceArea.note}`}

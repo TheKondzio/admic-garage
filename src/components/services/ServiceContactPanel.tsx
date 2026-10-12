@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { IconPhone } from "@/components/ui/icons";
 import { site } from "@/data/site";
+import { trackEvent } from "@/lib/tracking";
 import type { Service } from "@/types";
 
 type FormState = {
@@ -38,6 +39,7 @@ export function ServiceContactPanel({ service }: { service: Service }) {
   const [consent, setConsent] = useState(false);
   const [consentError, setConsentError] = useState<string | undefined>();
   const [status, setStatus] = useState<Status>("idle");
+  const [trap, setTrap] = useState(""); // honeypot — człowiek go nie widzi
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -55,10 +57,11 @@ export function ServiceContactPanel({ service }: { service: Service }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, service: service.navLabel }),
+        body: JSON.stringify({ ...form, service: service.navLabel, _gotcha: trap, page: `/uslugi/${service.slug}` }),
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
+      trackEvent("generate_lead", { form: "panel_uslugi", service: service.slug }); // tylko po 2xx, bez danych osobowych
       setForm(initialState);
       setConsent(false);
     } catch {
@@ -73,9 +76,19 @@ export function ServiceContactPanel({ service }: { service: Service }) {
         Zapytaj o wycenę
       </p>
       <h2 className="mt-1 font-display text-xl font-bold text-paper-100">{service.navLabel}</h2>
-      <p className="mt-2 text-sm text-paper-400">Odpisujemy zwykle w ciągu kilku godzin.</p>
+      <p className="mt-2 text-sm text-paper-400">Odpowiemy na Twoje zapytanie.</p>
 
-      <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-4">
+      <form onSubmit={handleSubmit} noValidate className="relative mt-6 space-y-4">
+        <input
+          type="text"
+          name="_gotcha"
+          value={trap}
+          onChange={(e) => setTrap(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute -left-[9999px] h-0 w-0 opacity-0"
+        />
         <PanelField label="Imię i nazwisko" error={errors.name}>
           <input
             value={form.name}

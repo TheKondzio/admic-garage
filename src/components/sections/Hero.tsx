@@ -71,6 +71,7 @@ export function Hero() {
               loop
               playsInline
               preload="metadata"
+              poster="/videos/hero_poster.jpg"
             >
               <source src={site.heroVideo} type="video/mp4" />
             </video>
