@@ -59,7 +59,7 @@ export const site = {
     // Cele → Konwersje → wybrana konwersja → Konfiguracja tagu). Puste = zdarzenie
     // konwersji NIE jest wysyłane (nie wpisuj tu zgadniętych wartości).
     conversions: {
-      lead_bmw: "", // wysłanie formularza (/carplay-i-kodowanie-bmw)
+      lead_bmw: "AW-18396266222/fbuaCJ2s0uMcEO79gsRE", // wysłanie formularza (/carplay-i-kodowanie-bmw) — konwersja „Website lead”
       phone: "", // kliknięcie numeru telefonu
       whatsapp: "", // kliknięcie WhatsApp
     } as Record<string, string>,
